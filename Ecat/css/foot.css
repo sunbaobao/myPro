@@ -149,3 +149,144 @@
     margin: auto;
     border: 8px solid #fff;
 }
+
+/*右侧导航栏*/
+#rtbar {
+    z-index: 2222;
+    position: fixed;
+    top: 30px;
+    right: 0;
+    width: 35px;
+}
+
+.rtico, .newdota, .menus li.dropmn a.msn, .rttop, .rtbot {
+    background-image: url('../images/catbar.png');
+    background-repeat: no-repeat;
+}
+
+.rttop {
+    height: 17px;
+    background-position: 0 -174px;
+}
+
+.rtbot {
+    height: 17px;
+    background-position: 0 -191px;
+}
+
+.rtcont {
+    background: #6a4385;
+}
+
+.rtcont-up {
+    padding-top: 10px;
+}
+
+.rtcont li.rtl {
+    position: relative;
+}
+
+.bagBox {
+    background: #2b251d;
+    width: 292px;
+    position: absolute;
+    right: 35px;
+    top: 0;
+    padding-bottom: 6px;
+}
+
+.rtcont a.rt-my {
+    background-position: 0 -235px;
+    margin-bottom: 40px;
+}
+
+.newdot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-position: -6px -600px;
+    top: -3px;
+    right: 2px;
+}
+
+.rtcont li.rtl label {
+    display: none;
+    right: 53px;
+    opacity: 0;
+}
+
+.rtcont a.rt-cart {
+    background-position: 0 -270px;
+}
+
+.rtcont a.rt-order {
+    background-position: 0 -305px;
+}
+
+.rtcont a.rt-ask {
+    background-position: 0 -340px;
+}
+
+.rtcont a.rt-view {
+    background-position: 0 -375px;
+}
+
+.rtcont a.rt-consulted {
+    background-position: 4px -617px;
+}
+
+.rtcont-dn {
+    padding-bottom: 10px;
+}
+
+.rtcont a.rt-app {
+    background-position: 0 -410px;
+}
+
+.rtcont a.rt-weibo {
+    background-position: 0 -480px;
+}
+
+.rtcont a.rt-weixin {
+    background-position: 0 -445px;
+    cursor: pointer;
+}
+
+.rtcont a.rt-top {
+    background-position: 0 -515px;
+    margin-bottom: 0;
+    visibility: visible;
+}
+
+.rtico {
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: 0 0 15px 0;
+}
+
+li.hov label em, .bagBox em {
+    display: block;
+    right: -8px;
+    top: 10px;
+    color: #FFA200;
+    font-size: 16px;
+    height: 16px;
+    width: 16px;
+    line-height: 16px;
+    position: absolute;
+    font-family: "瀹嬩綋";
+}
+
+li.hov label {
+    height: 35px;
+    width: 90px;
+    line-height: 35px;
+    background-color: #FFA200;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    color: #FFF;
+    padding-right: 10px;
+    display: block;
+}
