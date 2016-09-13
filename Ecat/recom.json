@@ -1,6 +1,6 @@
 [
   {
-    "img": "images/recomt1.jpg",
+    "img": "images/recomt1.png",
     "title":"猫咪主粮",
     "span": [
       {
@@ -65,7 +65,7 @@
     ]
   },
   {
-    "img": "images/recomt2.jpg",
+    "img": "images/recomt2.png",
     "title":"猫咪零食",
     "span": [
       {
@@ -130,7 +130,7 @@
     ]
   },
   {
-    "img": "images/recomt3.jpg",
+    "img": "images/recomt3.png",
     "title":"猫咪保健&医疗",
     "span": [
       {
@@ -195,7 +195,7 @@
     ]
   },
   {
-    "img": "images/recomt4.jpg",
+    "img": "images/recomt4.png",
     "title":"猫咪日用",
     "span": [
       {
@@ -260,7 +260,7 @@
     ]
   },
   {
-    "img": "images/recomt5.jpg",
+    "img": "images/recomt5.png",
     "title":"猫咪香波&日用",
     "span": [
       {
@@ -325,7 +325,7 @@
     ]
   },
   {
-    "img": "images/recomt6.jpg",
+    "img": "images/recomt6.png",
     "title":"猫咪牵引&服饰&玩具",
     "span": [
       {

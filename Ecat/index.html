@@ -406,13 +406,13 @@
             <img src="images/day_surprises.jpg">
         </div>
         <div class="time-px clearfix fr">
-            <p class="timemove current" value="09:00"><span>09:00</span><i></i><em class="time-out"></em></p>
-            <p class="timemove " value="11:00"><span>11:00</span><i></i><em class="time-out"></em></p>
-            <p class="timemove " value="13:00"><span>13:00</span><i></i><em class="time-out"></em></p>
-            <p class="timemove " value="15:00"><span>15:00</span><i></i><em class="time-out"></em></p>
-            <p class="timemove " value="19:00"><span>19:00</span><i></i><em class="time-out"></em></p>
-            <p class="timemove " value="21:00"><span>21:00</span><i></i><em class="time-out"></em></p>
-            <p class="timemove " value="24:00"><span>明日上线</span><i></i><em></em></p>
+            <p class="timemove current" ><span>09:00</span><i></i><em class="time-out"></em></p>
+            <p class="timemove " ><span>11:00</span><i></i><em class="time-out"></em></p>
+            <p class="timemove " ><span>13:00</span><i></i><em class="time-out"></em></p>
+            <p class="timemove " ><span>15:00</span><i></i><em class="time-out"></em></p>
+            <p class="timemove " ><span>19:00</span><i></i><em class="time-out"></em></p>
+            <p class="timemove " ><span>21:00</span><i></i><em class="time-out"></em></p>
+            <p class="timemove " ><span>明日上线</span><i></i><em></em></p>
         </div>
     </div>
     <!--内容-->
@@ -561,10 +561,10 @@
         <img src="images/recomt1.png" class="pet-proimg">
         <em class="pro-tt ft20">猫咪主粮</em>
                  <span class="fr pet-column">
-                     <a href="#"><img class="catepic" src="images/recoms1.jpg" width="40">进口猫粮</a>
-                     <a href="#"><img class="catepic" src="images/recoms2.jpg" width="40">国产猫粮</a>
-                     <a href="#"><img class="catepic" src="images/recoms3.jpg" width="40">拆零试吃</a>
-                     <a href="#"><img class="catepic" src="images/recoms4.jpg" width="40">处方猫粮</a>
+                     <a href="#"><img class="catepic" src="images/recoms1.jpg" >进口猫粮</a>
+                     <a href="#"><img class="catepic" src="images/recoms2.jpg" >国产猫粮</a>
+                     <a href="#"><img class="catepic" src="images/recoms3.jpg" >拆零试吃</a>
+                     <a href="#"><img class="catepic" src="images/recoms4.jpg" >处方猫粮</a>
                  </span>
     </h2>
     <!--广告-->
@@ -923,9 +923,10 @@
                         us+='<li><a href="#" class="imgBox"><img class="zom" src="'+res[i].us[j].img+'"></a><h3>'+res[i].us[j].tip+'</h3><p class="cf40 ft14 ftc">￥'+res[i].us[j].price+'</p></li>'
                    }
                    //console.log(us); cs ww
-                    dis+='<div class="pet-pro w-max ct mb30 bgwh ovh "><h2><img src="'+res[i].img+'" class="pet-proimg"><em class="pro-tt ft20">'+res[i].title+'</em><span class="fr pet-column">'+sp+'</span></h2><div class="petpro-l fl"><div><a href="#" class="imgBox"><img src="'+res[i].imgl+'"></a></div></div><div class="petpro-r fl">'+us+'</div></div>'
+                    dis+='<div class="pet-pro w-max ct mb30 bgwh ovh "><h2><img src="'+res[i].img+'" class="pet-proimg"><em class="pro-tt ft20">'+res[i].title+'</em><span class="fr pet-column">'+sp+'</span></h2><div class="petpro-l fl"><div><a href="#" class="imgBox"><img src="'+res[i].imgl+'"></a></div></div><div class="petpro-r fl"> <ul class="clearfix">'+us+'</ul></div></div>'
                }
-               console.log(dis);
+               //console.log(dis);
+               $("body").append(dis);
            })
     })
 </script>
