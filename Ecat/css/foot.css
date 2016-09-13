@@ -1,0 +1,151 @@
+.footer-content {
+    background: #F5F5F5;
+}
+
+.footer-top {
+    width: 100%;
+    background: #ac92ec;
+    padding: 40px 0 20px;
+}
+
+.footer-content .imgs ul {
+    border-bottom: 1px dotted #c1aef1;
+    padding: 0 0 30px 65px;
+}
+
+.footer-content .imgs ul li {
+    width: 120px;
+    margin-right: 69px;
+    float: left;
+    display: inline;
+}
+
+.footer-content .imgs ul li a {
+    display: block;
+    width: 120px;
+    text-align: center;
+    line-height: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #ebe3ff;
+}
+
+.zp, .tth, .cc, .wl, .fw {
+    background: url('../images/q-ico.png') no-repeat;
+    width: 68px;
+    height: 60px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.imgs ul li p {
+    margin-top: 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.tth {
+    background-position: 0 -69px;
+}
+
+.cc {
+    background-position: 0 -136px;
+}
+
+.wl {
+    background-position: 0 -203px;
+    height: 66px;
+    width: 52px;
+}
+
+.fw {
+    background-position: 0 -269px;
+    width: 61px;
+}
+
+.chegji {
+    background-position: 0 -348px;
+    height: 66px;
+    width: 68px;
+}
+
+.catphone {
+    margin: 30px 60px 0 0;
+}
+
+.footer-top dl {
+    float: right;
+    display: inline;
+    padding: 0 60px;
+    border-left: 1px dotted #c1aef1;
+    margin-top: 25px;
+}
+
+.pailie .catphone {
+    float: left;
+}
+
+.footer-top dt {
+    line-height: 35px;
+    font-size: 18px;
+    width: 72px;
+    color: #fff;
+}
+
+.footer-content dd {
+    line-height: 22px;
+    text-align: center;
+}
+
+.footer-top dd a {
+     line-height: 22px;
+     color: #fff;
+ }
+.padbot {
+    width: 418px;
+    display: inline;
+    padding: 20px 0;
+}
+
+.footer-tit b {
+    position: relative;
+    top: -7px;
+    display: inline-block;
+    padding: 0 10px;
+    background: #f8f8f8;
+    color: #333;
+}
+
+.footer-pd {
+    padding: 10px 0 0 0;
+}
+
+
+.padbot a {
+    display: inline-block;
+    margin: 5px 10px;
+}
+.footer-tit {
+    border-bottom: 1px solid #eee;
+    height: 0;
+    position: relative;
+    margin-top: 7px;
+}
+.footer-code-img {
+    width: 128px;
+    float: left;
+    display: inline;
+    margin: 0 0 0 38px;
+}
+.footer-code-img b {
+    display: block;
+    padding-bottom: 10px;
+}
+
+.footer-code-img img {
+    display: block;
+    margin: auto;
+    border: 8px solid #fff;
+}
