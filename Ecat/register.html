@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <link href="css/rest.css" type="text/css" rel="stylesheet">
+    <link href="css/register.css" type="text/css" rel="stylesheet">
+</head>
+<body class="bgwh">
+<!--header-->
+<div id="header">
+    <div class="header">
+        <div class="headfr">
+            <a href="#"><img src="images/register/cart-logo.png"></a>
+            <span><img src="images/register/welcome_07.jpg"></span>
+        </div>
+        <div class="headfl">
+            <span class="c666 ft14">已有账号？</span>
+            <a href="#" class="ft16 login">登录</a>
+        </div>
+    </div>
+
+</div>
+<!--main-->
+<div id="registM">
+    <form id="regisFrm">
+        <div class="registext">
+            <div class="userph">
+                <span>手机号：</span>
+                <input type="text" class="" name="userph" placeholder="手机号">
+            </div>
+            <div class="userph yzm">
+                <span>验证码：</span>
+                <input type="text" class="" name="vartify" placeholder="验证码">
+                <div class="yzmc">
+                    <img src="images/register/seccode.html.png">
+                    <a href="#" class="c999"><img src="images/register/renfren_03.jpg">换一换</a>
+                </div>
+
+            </div>
+            <div class="userph dxyzm">
+                <span>短信验证码：</span>
+                <input type="text" class="" name="dxvartify" placeholder="短信验证码">
+                <a class="dxbtn" href="javascript:;"><span>获取验证码</span></a>
+
+            </div>
+            <div class="userph username">
+                <span>用户名：</span>
+                <input type="text" class="" name="username" placeholder="用户名">
+
+            </div>
+            <div class="userph password">
+                <span>密码：</span>
+                <input type="password" class="" id="password" name="password" placeholder="密码">
+
+            </div>
+            <div class="userph confpas">
+                <span>确认密码：</span>
+                <input type="password"  class="" name="confpas" placeholder="确认密码">
+
+            </div>
+            <div class="sure">
+                <input type="checkbox" checked name="sure" class="">
+                <span class="xieyi">我已阅读并接受E宠<a href="#">《用户使用协议》</a></span>
+            </div>
+            <a href="javascript:;" id="submit">立即注册</a>
+        </div>
+    </form>
+</div>
+<!--footer-->
+
+<div class="overflow ct Registerfooter ftc">
+    <a class="c999" href="http://www.epet.com" target="_blank">E宠商城 |</a>
+    <a class="c999" href="http://pet.epet.com/lists.html" target="_blank">淘宠 |</a>
+    <a class="c999" href="http://zs.epet.com" target="_blank">知识 |</a>
+    <a class="c999" href="http://www.epet.com/game/duobao.html" target="_blank">游戏 |</a>
+    <a class="c999" href="http://www.epet.com/article/about.html" target="_blank">关于我们 |</a>
+    <a class="c999" href="http://www.epet.com/article1643.html" target="_blank">联系我们 </a>
+    <p class="c999 ftc">渝ICP备13005525号-2 &nbsp; 渝ICP备 10002905 &nbsp;增值电信业务经营许可证：渝B2-20140042 &nbsp; Copyright ©
+        2007-2016 epet.com &nbsp;重庆易宠科技有限公司</p>
+</div>
+
+</body>
+<script>
+    $(function () {
+        $("#regisFrm").validate({
+            rules: {
+                userph: {
+                    required: true,
+                    minlength: 11,
+                    maxlength: 11
+                },
+                vartify: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 5
+
+                },
+                dxvartify: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 5
+                },
+                username: {
+                    required: true,
+                    minlength: 4,
+                    maxlength: 20
+                },
+                password: {
+                    required: true,
+                    minlength: 4,
+                    maxlength: 20
+                },
+                confpas:{
+                    equalTo:"#password"
+                }
+
+            },
+            messages: {
+
+                userph: {
+                    required: "不能为空！",
+                    minlength:"请输入11位的电话号码",
+                    maxlength: "请输入11位的电话号码"
+                },
+                vartify: {
+                    required: "不能为空",
+                    minlength: "长度不对",
+                    maxlength: "长度不对"
+
+                },
+                dxvartify: {
+                    required:"不能为空",
+                    minlength: "长度不对！",
+                    maxlength: "长度不对"
+                },
+                username: {
+                    required: "长度为空",
+                    minlength: "长度不对",
+                    maxlength: "长度不对"
+                },
+                password: {
+                    required: "不能为空",
+                    minlength: "长度不对",
+                    maxlength: "长度不对"
+                },confpas:{
+                    equalTo:"两次密码输入不一致！"
+                }
+            },
+            errorElement: "em",
+            success: function (lable) {
+                lable.text("").addClass("success");
+                lable.parent().find("input").removeClass("error");
+            },
+            highlight: function(element, errorClass) {
+                $(element).parent().find("."+errorClass).removeClass("success");
+                $(element).parent().find("input").addClass("error");
+            }
+
+        });
+    })
+</script>
+</html>

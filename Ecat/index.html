@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link href="css/rest.css" rel="stylesheet" type="text/css">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+</head>
+<body>
+<!--header-->
+<div id="header">
+    <div class="header">
+        <p><a href="#" class="hla"> E宠就是正品</a></p>
+        <p>评价( <a href="#" class="cf60">360万</a> )</p>
+        <ul class="hru clearfix">
+            <li><a class="cred" href="#">投诉建议</a></li>
+            <li><a class="" href="#">帮助</a></li>
+            <li class="phone"><i></i><a class="" href="#">手机版</a></li>
+            <li class="collect">
+                <p class="topgz"><span>收藏我</span><b></b></p>
+                <div class="probox " style="">
+                    <a class="btn" href="javascript:;"><span>加入收藏夹</span></a>
+                    <a class="btn" href="#"><span>保存到桌面</span></a>
+                </div>
+            </li>
+            <li class="myepet">
+                <i></i>
+                <p class="topgz fl"><span><a href="#">我的E宠</a></span><b></b></p>
+                <div class="myec_tc " style="">
+                    <a href="#">我的订单</a>
+                    <a href="#">充值得优惠</a>
+                    <a href="#">兑换现金券</a>
+                    <a href="#">推荐得惊喜</a>
+                </div>
+            </li>
+            <li class="cart-t"><i></i><a href="#">购物车(<em id="cart_num">0</em>)</a></li>
+            <li><a href="register.html">[注册]</a></li>
+            <li><a href="register.html">[登录]</a></li>
+        </ul>
+    </div>
+</div>
+<!--head1-->
+<div id="head1" class="bgwh">
+    <div class="head1">
+        <div class="logo">
+            <a href="#"></a>
+        </div>
+        <form action="" class="fl" id="sechform">
+            <ul class="sch-list"></ul>
+            <div class="schib">
+                <input type="text" placeholder="关键字">
+                <button type="submit" value="1">搜索</button>
+            </div>
+            <div class="keywords">
+                <label>热门搜索：</label>
+                <a class="cred" href="#">麦德氏</a><span>|</span> <a
+                    href="#">纯皓</a><span>|</span> <a
+                    href="#">百利本能猫粮</a><span>|</span> <a
+                    href="#">百娜绮9折</a><span>|</span> <a
+                    href="#">皇室猫粮</a></div>
+        </form>
+        <div class="fl phonecode">
+            <a href="#">任性，<span class="cred ft16">猫砂</span>全国99包邮啦！</a>
+        </div>
+        <div class="go-buy fr">
+            <a class="c666" href="#">购物车(<em>0</em>)</a>
+        </div>
+    </div>
+</div>
+<!--nav-->
+<div id="nav" class="bgwh">
+    <div class="nav clearfix">
+        <div class="nav-list fl">
+            <div class="main-title">
+                <span class="epet-type"><a href="#">猫猫</a><b class="cate1"></b></span>
+                <span class="hov" style="background-color: cyan">商品分类<b class="cate2"></b></span>
+            </div>
+            <div id="main-list">
+                <!--左边详细列表-->
+                <div class="main-list-l">
+                    <!--宠物分类-->
+                    <div class="list-type" style="display: none;"></div>
+                    <!--商品分类-->
+                    <div class="detype rela">
+                        <ul class="clearfix">
+                            <li class="">
+                                <h3><span class="menuIcoBg menu1"></span>
+                                    <a href="#">主粮<i>326</i></a> 
+                                    <a href="#">零食<i>245</i></a>
+                                </h3>
+                            </li>
+                            <li class="">
+                                <h3><span class="menuIcoBg menu2"></span>
+                                    <a href="#">日用<i>526</i></a> 
+                                    <a href="#">玩具<i>145</i></a>
+                                </h3>
+                            </li>
+                            <li class="">
+                                <h3><span class="menuIcoBg menu3"></span>
+                                    <a href="#">保健<i>116</i></a> 
+                                    <a href="#">医疗<i>245</i></a>
+                                </h3>
+                            </li>
+                            <li class="">
+                                <h3><span class="menuIcoBg menu4"></span>
+                                    <a href="#">美容<i>56</i></a> 
+                                    <a href="#">香波<i>51</i></a>
+                                </h3>
+                            </li>
+                            <li class="">
+                                <h3><span class="menuIcoBg menu5"></span>
+                                    <a href="#">出行<i>41</i></a> 
+                                    <a href="#">装扮<i>535</i></a>
+                                </h3>
+                            </li>
+                            <li class="">
+                                <h3><span class="menuIcoBg menu6"></span>
+                                    <a href="#">书籍<i>422</i></a> 
+                                    <a href="#">杂志<i>51</i></a>
+                                </h3>
+                            </li>
+                        </ul>
+                        <!--活动-->
+                        <p onclick="alert('尽情期待')" class="pet-active"><img src="images/active.png">正在进行的活动<a>10</a></p>
+                    </div>
+                </div>
+                <!--rightList-->
+                <div class="main-list-r">
+                    <div class="cate-l">
+                    </div>
+                </div>
+                <!--正在进行的活动-->
+                <div class="cate-action clearfix ">
+                    <div class="action-slider">
+                        <ul>
+                            <li>
+                                <p><a href="#" target="_blank"><img alt="洗澡啦，喵君哪里逃" src="images/a9.jpg"></a><span>洗澡啦，喵君哪里逃</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="act-click">
+                        <a href="javascript:;" class="act-prev"><b></b></a>
+                        <span id="act-now"></span>/<span id="act-page"></span>
+                        <a href="javascript:;" class="act-next"><b></b></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <ul class="menus">
+            <li><a target="_blank" class="mns" href="#">全球特卖</a></li>
+            <li><img src="images/new.gif" style="margin: -8px 10px 0 -25px;"><a class="mns" href="#">国家馆</a></li>
+            <li><a class="mns" href="#"><b></b>罐头超市</a></li>
+            <li><a class="mns" href="#"><b></b>热卖礼包</a></li>
+            <li><a class="mns" href="#"><b></b>清仓特价</a></li>
+        </ul>
+    </div>
+</div>
+<!--banner-->
+<div id="banner" class="clearfix bgwh">
+    <!--轮播-->
+    <div class="indexBox">
+        <div class="imgL">
+            <div>
+                <div class="imgW">
+                    <a href="#">
+                        <img src="images/slider1.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div>
+                <div class="imgW">
+                    <a href="#">
+                        <img src="images/slider2.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div>
+                <div class="imgW">
+                    <a href="#">
+                        <img src="images/slider3.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div>
+                <div class="imgW">
+                    <a href="#">
+                        <img src="images/slider4.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div>
+                <div class="imgW">
+                    <a href="#">
+                        <img src="images/slider5.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div>
+                <div class="imgW">
+                    <a href="#">
+                        <img src="images/slider6.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div>
+                <div class="imgW">
+                    <a href="#">
+                        <img src="images/slider7.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--小点点-->
+        <div class="dot">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
+        </div>
+    </div>
+    <!--右边的图片-->
+    <div class="bosR">
+        <div class="boxR-c">
+            <div class="bR-cr">
+                <div>
+                    <a href="#"><img src="images/banr1.jpg"></a>
+                </div>
+                <div>
+                    <a href="#"><img src="images/banr2.jpg"></a>
+                </div>
+                <div>
+                    <a href="#"><img src="images/banr3.jpg"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--口碑好评轮播-->
+<div id="kh" class="clearfix bgwh">
+    <div class="adsW">
+        <div class="adsl fl">
+            <!--第一个好评-->
+            <div class="adsl-f adsc">
+                <div class="adsct">
+                    <h2><a class="cfff" href="#">口碑评价&gt;&gt;</a></h2>
+                    <b></b><span>391.1万</span>
+                </div>
+                <div class="adscb">
+                    <h2>好评率</h2>
+                    <b class="l-hp"></b><span>99.6980%</span>
+                </div>
+            </div>
+            <!--第二个上架新品-->
+            <div class="adsl-s adsc">
+                <div class="adsct">
+                    <h2><a class="cfff" href="#">上架新品</a></h2>
+                    <b class="l-xp"></b><span>415</span>
+                </div>
+                <div class="adscb">
+                    <h2>宠物用品单品数</h2>
+                    <b class="l-ds"></b><span>27482</span>
+                </div>
+            </div>
+        </div>
+        <div class="adsr fr">
+            <div class="hono-r">
+                <ul>
+                    <li>
+                        <div class="hono-rl fl">
+                            <a href="javascript:;" class="petview">
+                                <img src="images/adsrh1.jpg">
+                            </a>
+                            <p>毛小咪</p>
+                        </div>
+                        <div class="hono-rr fl bgwh">
+                            <span>第<em>23次</em>购买</span>
+                            <p>宝贝喜欢的不得了，第一次买的毛都啃没了，对于e宠的东西百分百满意，</p>
+                            <a href="javascript:;">台湾Amycarol 趣味玩具 鸡毛+蝴蝶结逗猫棒...</a>
+                            <b></b>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="hono-rl fl">
+                            <a href="javascript:;" class="petview">
+                                <img src="images/adsrh2.jpg">
+                            </a>
+                            <p>小花成长记</p>
+                        </div>
+                        <div class="hono-rr fl bgwh">
+                            <span>第<em>2次</em>购买</span>
+                            <p>质量很好，手感不错，羽毛软软的，纠结半天还是买个质量好些的，耐用些，猫咪很喜欢</p>
+                            <a href="javascript:;">GiGwi 魔力逗猫棒系列 鸡毛毛绒舞动 53*2...</a>
+                            <b></b>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="hono-r">
+                <ul>
+                    <li>
+                        <div class="hono-rl fl">
+                            <a href="javascript:;" class="petview">
+                                <img src="images/adsrh3.jpg">
+                            </a>
+                            <p>Nico</p>
+                        </div>
+                        <div class="hono-rr fl bgwh">
+                            <span>第<em>2次</em>购买</span>
+                            <p>
+                                很奇怪大妙为什么没有幼猫粮。。。非常实诚满满一包（莫名其妙比之前淘宝买的500克粮多好多。。(#ﾟДﾟ)黑心店家）猫咪也非常喜欢，性价比还高，先混着发育宝喂着，主子一岁后就锁定这个粮了吼吼</p>
+                            <a href="javascript:;">台湾Amycarol 趣味玩具 鸡毛+蝴蝶结逗猫棒...</a>
+                            <b></b>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="hono-rl fl">
+                            <a href="javascript:;" class="petview">
+                                <img src="images/adsrh4.jpg">
+                            </a>
+                            <p>大头</p>
+                        </div>
+                        <div class="hono-rr fl bgwh">
+                            <span>第<em>21次</em>购买</span>
+                            <p>
+                                喂了这么多猫粮，从不同价位的，渴望，海洋之星，金素力高，极誉。吃了都软便，最后只能吃i/d处方粮，但是医生说不能一直吃下去，然后我在网上找了很多猫粮，根据配方，口碑，其它猫友家猫的反馈，</p>
+                            <a href="javascript:;">GiGwi 魔力逗猫棒系列 鸡毛毛绒舞动 53*2...</a>
+                            <b></b>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="lb-r packageInfo" id="epet-ads2">
+                <div class="lb-rtop">
+                    <img src="images/package-free.png" class="vertical mr">
+                    46671人在排队领取
+                    <a class="lb-acquire gray">领取礼包</a>
+                    <a class="cred ft12 pointer" style="text-decoration: underline;padding-left: 10px;">活动规则</a>
+                    <span class="fr ft14">已领取总额 <em>712006</em>元</span>
+                </div>
+                <div class="lb-rbot">
+                    <!--未排队-->
+                    <div class="lb-radd fl pointer">
+                        <a class="r-add" href="javascript:;"></a>
+                        <a class="r-join" href="javascript:;">参与排队</a>
+                    </div>
+
+                    <div class="lb-rlist fl">
+                        <ul>
+                            <li>
+                                <a href="javascript:;" class="petview"><img src="images/adsrh1.jpg"></a>
+                                <p><a href="javascript:;">Lucky</a></p>
+                                <p>NO.7</p>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="petview"><img src="images/adsrh2.jpg"></a>
+                                <p><a href="javascript:;">ncik</a></p>
+                                <p>NO.6</p>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="petview"><img src="images/adsrh3.jpg"></a>
+                                <p><a href="javascript:;">咪咪</a></p>
+                                <p>NO.5</p>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="petview"><img src="images/adsrh4.jpg"></a>
+                                <p><a href="javascript:;">蛋蛋</a></p>
+                                <p>NO.4</p>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="petview"><img src="images/adsrh5.jpg"></a>
+                                <p><a href="javascript:;">石榴</a></p>
+                                <p>NO.3</p>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="petview"><img src="images/adsrh6.jpg"></a>
+                                <p><a href="javascript:;">妮妮</a></p>
+                                <p>NO.2</p>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="petview"><img src="images/adsrh7.jpg"></a>
+                                <p><a href="javascript:;">花花</a></p>
+                                <p>NO.1</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--happyshopping-->
+<div id="happyShopping">
+    <img src="images/happy-shopping.jpg" alt="xxx起来嗨">
+</div>
+<!--amingzing-->
+<div id="aminz" class="clearfix bgwh">
+    <!--头-->
+    <div CLASS="clearfix surprise-t">
+        <div class="fl sur-titimg overflow">
+            <img src="images/day_surprises.jpg">
+        </div>
+        <div class="time-px clearfix fr">
+            <p class="timemove current" value="09:00"><span>09:00</span><i></i><em class="time-out"></em></p>
+            <p class="timemove " value="11:00"><span>11:00</span><i></i><em class="time-out"></em></p>
+            <p class="timemove " value="13:00"><span>13:00</span><i></i><em class="time-out"></em></p>
+            <p class="timemove " value="15:00"><span>15:00</span><i></i><em class="time-out"></em></p>
+            <p class="timemove " value="19:00"><span>19:00</span><i></i><em class="time-out"></em></p>
+            <p class="timemove " value="21:00"><span>21:00</span><i></i><em class="time-out"></em></p>
+            <p class="timemove " value="24:00"><span>明日上线</span><i></i><em></em></p>
+        </div>
+    </div>
+    <!--内容-->
+    <div class="surprise-c">
+        <!--小的轮播图-->
+        <div class="day-surimg fl" id="day-surimg">
+            <a href="#" class="d1">
+                <img src="images/daysl1.jpg">
+            </a>
+            <a href="#" class="d1">
+                <img src="images/daysl2.jpg">
+            </a>
+            <a href="#" class="d1">
+                <img src="images/daysl3.jpg">
+            </a>
+            <div class="d2" id="daysurimg-id">
+                <ul class="clearfix">
+                    <li class="act"></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <!--list-->
+        <div class="fr surprise-list ovh">
+            <ul class="clearfix">
+                <li>
+                    <div class="sur-hear p25">
+                        <a href="#" class="imgBox ftc"><img
+                                src="images/surl1.jpg"
+                                class="zom"></a>
+                        <h1 class="overflow "><a href="#" class="ft12 c333">日本Sigone 猫猫专用口腔清洁除菌剂 20ml</a></h1>
+                    </div>
+                    <div class="sur-price clearfix">
+                        <div class="fl sur-numbox overflow">
+                            <div class="sur-num bold"><em class="ft14">￥</em>69.00</div>
+                            <p class="c999">
+                                <del>89.00</del>
+                                <span class="ml"> 仅剩4瓶</span></p>
+                        </div>
+                        <div class="fr">
+                            <a href="javascript:void(0);" class="atonce-buy bold ft14 ftc">立即抢购</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--recommend-->
+<div id="recommend" class="clearfix">
+    <h2>E仔今天推荐了哪些精品？</h2>
+    <ul>
+        <li>
+            <div class="tj-left fl">
+                <a href="#"><img class="zom" src="images/tj1.jpg"></a>
+            </div>
+            <div class="tj-right fl">
+                <h3><a href="#">法国娜朵Nullodor 彩色结团猫砂 1.8kg 黄色 </a></h3>
+                <div class="tj-price">
+                    <b class="ibg"></b>
+                    <em class="db ft18 cf40">￥88.00</em>
+                    <span class="db ft16 c000">推荐理由：</span>
+                </div>
+                <p class="tj-des lh20 c999 ovh">娜朵猫砂在欧洲有20多年历史，曾获得 2014亚洲宠物展新品铜奖，
+                    200%高效吸水，超强除臭，细小颗粒砂结构，猫咪抓感舒适，彩砂系列4种颜色可选，接近内饰家装风格，也是一种时尚装饰。</p>
+            </div>
+        </li>
+        <li>
+            <div class="tj-left fl">
+                <a href="#"><img class="zom" src="images/tj2.jpg"></a>
+            </div>
+            <div class="tj-right fl">
+                <h3><a href="#">日本佳乐滋 半封闭型双层猫砂盆套装 象牙色 </a></h3>
+                <div class="tj-price">
+                    <b class="ibg"></b>
+                    <em class="db ft18 cf40">￥348.00</em>
+                    <span class="db ft16 c000">推荐理由：</span>
+                </div>
+                <p class="tj-des lh20 c999 ovh">日本超人气商品，猫砂盆+尿垫+猫砂+猫砂铲一套买齐，除臭抗菌长达一周，即使在密封环境也不会产生异味！</p>
+            </div>
+        </li>
+        <li>
+            <div class="tj-left fl">
+                <a href="#"><img class="zom" src="images/tj3.jpg"></a>
+            </div>
+            <div class="tj-right fl">
+                <h3><a href="#">田田猫 益智陶瓷慢食碗 </a></h3>
+                <div class="tj-price">
+                    <b class="ibg"></b>
+                    <em class="db ft18 cf40">￥12.00</em>
+                    <span class="db ft16 c000">推荐理由：</span>
+                </div>
+                <p class="tj-des lh20 c999 ovh">益智陶瓷多功能猫餐具，让猫猫每天聪明多一些！并能帮助猫猫健康饮食，拒绝囫囵吞枣，做一只细嚼慢咽的喵，减少呕吐。</p>
+            </div>
+        </li>
+        <li>
+            <div class="tj-left fl">
+                <a href="#"><img class="zom" src="images/tj4.jpg"></a>
+            </div>
+            <div class="tj-right fl">
+                <h3><a href="#">宠儿香 猫用康源益生菌 5克*5包/盒 </a></h3>
+                <div class="tj-price">
+                    <b class="ibg"></b>
+                    <em class="db ft18 cf40">￥32.00</em>
+                    <span class="db ft16 c000">推荐理由：</span>
+                </div>
+                <p class="tj-des lh20 c999 ovh">解决爱宠腹泻、便秘、厌食、积食、呕吐、促进肠功能，提升胃动力等等，家有宠物，常备宠儿香康源益生菌！大品牌，值得信赖！</p>
+            </div>
+        </li>
+        <li>
+            <div class="tj-left fl">
+                <a href="#"><img class="zom" src="images/tj5.jpg"></a>
+            </div>
+            <div class="tj-right fl">
+                <h3><a href="#">田田猫 立体猫陶瓷猫碗 </a></h3>
+                <div class="tj-price">
+                    <b class="ibg"></b>
+                    <em class="db ft18 cf40">￥130.00</em>
+                    <span class="db ft16 c000">推荐理由：</span>
+                </div>
+                <p class="tj-des lh20 c999 ovh">喵的美生活，从田田猫开始。让猫咪从此不做低头族，保护猫猫颈椎健康，可爱的造型，也能为家庭装饰增添些许活泼的风格呢！
+                    让猫咪从此不做低头族，保护猫猫颈椎健康，可爱的造型，也能为家庭装饰增添些许活泼的风格呢！</p>
+            </div>
+        </li>
+        <li>
+            <div class="tj-left fl">
+                <a href="#"><img class="zom" src="images/tj6.jpg"></a>
+            </div>
+            <div class="tj-right fl">
+                <h3><a href="#"> 美国Pioneer Pet 猫用阿波罗餐盒</a></h3>
+                <div class="tj-price">
+                    <b class="ibg"></b>
+                    <em class="db ft18 cf40">￥65.00</em>
+                    <span class="db ft16 c000">推荐理由：</span>
+                </div>
+                <p class="tj-des lh20 c999 ovh">首创玩具与食具合二为一，运动型颗粒干粮餐盘，小孔瞭望大孔捕食，增加进食乐趣的同时避免贪食过量，引导猫咪健康进食</p>
+            </div>
+        </li>
+    </ul>
+
+</div>
+<!--分类推荐-->
+<div class="pet-pro w-max ct mb30 bgwh ovh ">
+    <h2>
+        <img src="images/recomt1.png" class="pet-proimg">
+        <em class="pro-tt ft20">猫咪主粮</em>
+                 <span class="fr pet-column">
+                     <a href="#"><img class="catepic" src="images/recoms1.jpg" width="40">进口猫粮</a>
+                     <a href="#"><img class="catepic" src="images/recoms2.jpg" width="40">国产猫粮</a>
+                     <a href="#"><img class="catepic" src="images/recoms3.jpg" width="40">拆零试吃</a>
+                     <a href="#"><img class="catepic" src="images/recoms4.jpg" width="40">处方猫粮</a>
+                 </span>
+    </h2>
+    <!--广告-->
+    <div class="petpro-l fl">
+        <div><a href="#" class="imgBox"><img src="images/recoml1.jpg"></a></div>
+    </div>
+    <div class="petpro-r fl">
+        <ul class="clearfix">
+            <li>
+                <a href="#" class="imgBox">
+                    <img class="zom" src="images/recomu1.jpg">
+                </a>
+                <h3>原装猫粮 买1赠1</h3>
+                <p class="cf40 ft14 ftc">￥219.00</p>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+    //ajax获取商品列表
+    $(function () {
+        var cateLi = $(".main-list-r>.cate-l").eq(0);
+        $.get("goods.json", function (res) {
+            var tis = "";  //创建大的title  c
+            for (var i = 0; i < res.length; i++) {
+                //console.log(res[i].title);cs ww
+                var hes = ""; //创建小的列表
+                for (var j = 0; j < res[i].title.head.length; j++) {
+                    //console.log(res[i].title.head[j]); cs ww
+                    var lis = "";      //创建a标签
+                    for (var k = 0; k < res[i].title.head[j].list.length; k++) {
+                        //console.log(res[i].title.head[j].list[k]); cs ww
+                        lis += '<a href="#">' + res[i].title.head[j].list[k] + '</a>';
+                    }
+                    hes += '<div class="mid_head"><a href="#">' + res[i].title.head[j].headName + '</a><img src="' + res[i].title.head[j].img + '" alt=""></div><div class="mid_list">' + lis + '</div><div class="clear dotline"></div>';
+                }
+                // console.log(hes);  cs ww
+
+                tis += '<div class="mincate"><div class="ctitle"><img class="catepic" src="' + res[i].title.img + '"><a href="#">' + res[i].title.content + '</a><i></i><a href="#"><img src="' + res[i].title.gif + '" width="220" height="35"></a></div><div class="clear dotline"></div>' + hes + '</div>';
+            }
+            // console.log(tis);    cs ww
+            cateLi.html(tis);
+        }, "json");
+    })
+</script>
+<script>
+    //商品列表划入画出效果
+    $(function () {
+        var detU = $(".detype>ul").eq(0);
+        var lr = $(".main-list-r").eq(0);
+        var l = $(".cate-l").eq(0);
+        //鼠标移入列表
+        detU.on("mouseenter", "li", function (e) {
+            //console.log($(this).index());
+            $(this).addClass("hov").siblings().removeClass("hov");
+            var index = $(this).index();
+            lr.css("display", "block");
+            for (var i = 0; i < l.children().length; i++) {
+                if (i == (2 * index) || i == (2 * index + 1)) {
+                    l.children().eq(i).css("display", "block");
+                } else {
+                    l.children().eq(i).css("display", "none");
+                }
+            }
+        });
+        //移出
+        detU.on("mouseleave", function (e) {
+            //console.log($(this).index());
+            if ($(e.relatedTarget).parents(".main-list-r").length != 0) {
+                return;
+            }
+            //console.log(e.relatedTarget);
+            $(this).children().removeClass("hov");
+
+            lr.css("display", "none");
+        });
+        //左边的列表移出
+        lr.on("mouseenter", function () {
+            $(this).css("display", "block");
+        });
+        lr.on("mouseleave", function () {
+            detU.children().removeClass("hov");
+            $(this).css("display", "none");
+        })
+
+    });
+</script>
+<script>
+    //活动效果切换
+    $(function () {
+        //加载json数据
+        var page = 0;
+        var resJ;
+        var nowpage = 1;
+        var li1 = $(".action-slider>ul>li").eq(0);
+        $.get("act.json", function (res) {
+            //console.log(res);  cs ww
+            resJ = res;
+            page = Math.ceil(res.length / 4);
+            go(nowpage);
+            $("#act-page").text(page);
+
+        }, 'json');
+        $(".act-next").eq(0).click(function () {
+            if (nowpage == page) {
+                nowpage = 1;
+            } else {
+                nowpage++;
+            }
+            go(nowpage);
+        });
+        $(".act-prev").eq(0).click(function () {
+            if (nowpage == 1) {
+                nowpage = page;
+            } else {
+                nowpage--;
+            }
+            go(nowpage);
+        });
+        function go(index) {
+            var ps = '';
+            if (index == page) {
+                for (var i = (index - 1) * 4; i < resJ.length; i++) {
+                    ps += '<p><a href="#"><img alt="' + resJ[i].tip + '" src="' + resJ[i].img + '"></a><span>' + resJ[i].tip + '</span></p>'
+                }
+            } else {
+                for (var i = (index - 1) * 4; i < index * 4; i++) {
+                    ps += '<p><a href="#"><img alt="' + resJ[i].tip + '" src="' + resJ[i].img + '"></a><span>' + resJ[i].tip + '</span></p>'
+                }
+            }
+            $("#act-now").text(nowpage);
+            li1.html(ps);
+        }
+    });
+    $(function () {
+        var catA = $(".cate-action").eq(0);
+        var p = $(".pet-active").eq(0);
+        p.on("mouseenter", function (e) {
+            $(this).addClass("hov");
+            catA.css("display", "block");
+        });
+        p.eq(0).on("mouseleave", function (e) {
+            //console.log($(e.relatedTarget));
+            if ($(e.relatedTarget).parents(".cate-action").length != 0 || ($(e.relatedTarget).hasClass("cate-action"))) {
+                return;
+            }
+            $(this).removeClass("hov");
+            catA.css("display", "none");
+        });
+        catA.on("mouseenter", function () {
+            catA.css("display", "block");
+        });
+        catA.on("mouseleave", function () {
+            catA.css("display", "none");
+            p.removeClass("hov");
+
+        })
+    })
+</script>
+<script>
+    $(function () {
+        //轮播
+        var index = 0, page = 7;
+        var imgLs = $(".imgL").children(); //img列表
+        var timer;
+        var imgW = $(".imgW").children();//img
+        var spn = $(".main-title").eq(0).children().eq(1);//分类标签
+        var dot = $(".dot");    //小点点
+        var colorA = ["rgb(0, 23, 76)", "rgb(189, 163, 130)", "rgb(229, 236, 244)", "rgb(255, 226, 64)", " rgb(130, 174, 192)", " rgb(247, 246, 244)", "rgb(7, 119, 165)"];
+
+        function go() {
+            if (index == (imgLs.length - 1)) {
+                index = 0;
+            }
+            else {
+                index++;
+            }
+            dot.children().eq(index).addClass("hov").siblings().removeClass("hov");
+            spn.css("opacity", "0.3");
+            spn.animate({opacity: 1}, 200).css("background", colorA[index]);
+            imgLs.finish();
+            imgLs.eq(index).fadeIn(200, function () {
+                $(this).addClass("hov").css("background", colorA[index]);
+            }).siblings().fadeOut(200, function () {
+                $(this).removeClass("hov");
+            });
+        }
+
+        go();
+        timer = setInterval(go, 5000);
+        //鼠标划入大的盒子停止计时器
+        $(".indexBox").eq(0).on("mouseenter", ".imgL>div", function (e) {
+            //console.log($(this).index());  csww
+            clearInterval(timer);
+        });
+        $(".indexBox").eq(0).on("mouseleave", function (e) {
+            //console.log($(this).index());  csww
+            timer = setInterval(go, 5000);
+        });
+        dot.on("mouseenter", "a", function (e) {
+            // console.log($(this).index()); cs ww
+            clearInterval(timer);
+            if ($(this).index() == 0) {
+                index = (imgLs.length - 1);
+            } else {
+                index = $(this).index() - 1;
+            }
+            //console.log(index);
+            go();
+        })
+    })
+</script>
+<script>
+    //ads切换效果
+    $(function () {
+        var adsl = $(".adsl").eq(0);
+
+        var index = 0;
+        var timer;
+        //运动函数
+        function scroll() {
+            adsl.children().eq(index).animate({height: 0}, 100, function () {
+                if (index == (adsl.children().length - 1)) {
+                    index = 0;
+                } else {
+                    index++;
+                }
+                adsl.children().eq(index).animate({height: 200}, 100);
+            });
+        }
+
+        timer = setInterval(scroll, 5000);
+        adsl.on({
+            mouseenter: function () {
+                //clearInterval(timer);
+            }, mouseleave: function () {
+                // timer = setInterval(scroll, 4000);
+            }
+        });
+    });
+    $(function () {
+        var adsr = $(".adsr").eq(0);
+        var index = 0;
+        var timer;
+        //运动函数
+        function scroll() {
+            adsr.children().eq(index).animate({height: 0}, 100, function () {
+                if (index == (adsr.children().length - 1)) {
+                    index = 0;
+                } else {
+                    index++;
+                }
+                adsr.children().eq(index).animate({height: 200}, 100);
+            });
+        }
+
+        scroll();
+        timer = setInterval(scroll, 4000);
+        adsr.on({
+            mouseenter: function () {
+                clearInterval(timer);
+            }, mouseleave: function () {
+                timer = setInterval(scroll, 4000);
+            }
+        });
+    })
+</script>
+<script>
+    //天天惊喜小的轮播图
+    $(function () {
+        var dayS = $("#day-surimg");
+        var daySd = $("#daysurimg-id>ul").children();
+        var timer;
+        var index = 0;
+
+        function go() {
+            if (index == (dayS.children("a").length - 1)) {
+                index = 0;
+            } else {
+                index++;
+            }
+            daySd.eq(index).addClass("act").siblings().removeClass("act");
+            dayS.children("a").eq(index).stop(true).fadeIn().siblings("a").stop(true).fadeOut();
+        }
+
+        timer = setInterval(go, 3000);
+        dayS.on("mouseenter", function () {
+            clearInterval(timer);
+        });
+        dayS.on("mouseleave", function () {
+            timer = setInterval(go, 3000);
+        });
+        $("#daysurimg-id>ul").on("mouseenter", "li", function () {
+            clearInterval(timer);
+            if ($(this).index() == 0) {
+                index = (dayS.children("a").length - 1);
+            } else {
+
+                index = $(this).index() - 1;
+            }
+            //console.log($(this).index());  csww
+            //console.log(index); csww
+            go();
+        })
+    });
+</script>
+<script>
+    //ajax获取每天惊喜
+    $(function () {
+        $.get("surprise.json", function (res) {
+            //console.log(res);  csww
+            var arrT = ["9", "11", "13", "15", "19", "21", "24"];
+            var uls = '';
+            for (var i = 0; i < 7; i++) {
+                //  console.log(res[arrT[i]]);  cs ww
+                var lis = '';
+                for (var j = 0; j < 4; j++) {
+                    lis += '<li><div class="sur-hear p25"><a href="#" class="imgBox ftc"><img src="' + res[arrT[i]][j].img + '" class="zom"></a><h1 class="overflow "><a href="#" class="ft12 c333">' + res[arrT[i]][j].tip + '</a></h1></div><div class="sur-price clearfix"><div class="fl sur-numbox overflow"><div class="sur-num bold"><em class="ft14">￥</em>' + res[arrT[i]][j].price + '</div><p class="c999"><del>89.00</del><span class="ml"> 仅剩' + res[arrT[i]][j].remain + '瓶</span></p></div><div class="fr"><a href="javascript:void(0);" class="atonce-buy bold ft14 ftc">立即抢购</a></div></div></li>'
+                }
+                //console.log(lis); csww
+                uls += '<ul class="clearfix">' + lis + '</ul>';
+            }
+            //console.log(uls);  csww
+            $(".surprise-list").eq(0).html(uls);
+        }, "json")
+    });
+</script>
+<script>
+    //每天活动更新
+    $(function () {
+        var time = $(".time-px").eq(0);
+        var surprises = $(".surprise-list").eq(0);
+        time.on("mouseenter", "p", function () {
+            // console.log($(this).index());  csww
+            $(this).addClass("current").siblings().removeClass("current");
+            surprises.children().eq($(this).index()).css("display", "block").siblings().css("display", "none");
+        })
+    });
+</script>
+<script>
+    //ajax获取推荐列表
+    $(function () {
+           $.get("recom.json",function (res) {
+               //console.log(res);  csww
+               var dis='';
+               for(var i=0;i<res.length;i++){
+                   var sp='';
+                   //拼接span
+                   for(var k=0;k<res[i].span.length;k++){
+                       sp+='<a href="#"><img class="catepic" src="'+res[i].span[k].img+'" width="40">'+res[i].span[k].tip+'</a>'
+                   }
+                   // console.log(sp); csww
+                   var us='';
+                   for(var j=0;j<8;j++){
+                        us+='<li><a href="#" class="imgBox"><img class="zom" src="'+res[i].us[j].img+'"></a><h3>'+res[i].us[j].tip+'</h3><p class="cf40 ft14 ftc">￥'+res[i].us[j].price+'</p></li>'
+                   }
+                   //console.log(us); cs ww
+                    dis+='<div class="pet-pro w-max ct mb30 bgwh ovh "><h2><img src="'+res[i].img+'" class="pet-proimg"><em class="pro-tt ft20">'+res[i].title+'</em><span class="fr pet-column">'+sp+'</span></h2><div class="petpro-l fl"><div><a href="#" class="imgBox"><img src="'+res[i].imgl+'"></a></div></div><div class="petpro-r fl">'+us+'</div></div>'
+               }
+               console.log(dis);
+           })
+    })
+</script>
+</html>
