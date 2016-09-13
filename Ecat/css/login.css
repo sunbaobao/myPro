@@ -1,0 +1,46 @@
+.Loginlink {
+    margin-right: 24px;
+}
+
+.Logonfr {
+    margin: 13px 5px 0 0;
+}
+
+.Loginlink a {
+    padding: 0 5px;
+}
+
+#logmain {
+    height: 628px;
+    background: url("../images/login/logbg2.jpg") no-repeat center;
+
+}
+
+.logbg {
+    width: 1100px;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 628px;
+}
+
+.logind {
+    width: 340px;
+    padding: 0 36px 30px;
+    background: #fff;
+    top: 70px;
+    right: 5px;
+}
+
+.logintab span {
+
+    height: 67px;
+    line-height: 80px;
+    width: 50%;
+    border-bottom: #ddd solid 1px;
+}
+
+.logintab .Logindefalut {
+    color: #000;
+    border-bottom: #33cb98 solid 1px;
+}

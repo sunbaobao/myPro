@@ -59,7 +59,7 @@
             </div>
             <div class="userph confpas">
                 <span>确认密码：</span>
-                <input type="password"  class="" name="confpas" placeholder="确认密码">
+                <input type="password" class="" name="confpas" placeholder="确认密码">
 
             </div>
             <div class="sure">
@@ -73,12 +73,12 @@
 <!--footer-->
 
 <div class="overflow ct Registerfooter ftc">
-    <a class="c999" href="http://www.epet.com" target="_blank">E宠商城 |</a>
-    <a class="c999" href="http://pet.epet.com/lists.html" target="_blank">淘宠 |</a>
-    <a class="c999" href="http://zs.epet.com" target="_blank">知识 |</a>
-    <a class="c999" href="http://www.epet.com/game/duobao.html" target="_blank">游戏 |</a>
-    <a class="c999" href="http://www.epet.com/article/about.html" target="_blank">关于我们 |</a>
-    <a class="c999" href="http://www.epet.com/article1643.html" target="_blank">联系我们 </a>
+    <a class="c999" href="#">E宠商城 |</a>
+    <a class="c999" href="#">淘宠 |</a>
+    <a class="c999" href="#">知识 |</a>
+    <a class="c999" href="#">游戏 |</a>
+    <a class="c999" href="#">关于我们 |</a>
+    <a class="c999" href="#">联系我们 </a>
     <p class="c999 ftc">渝ICP备13005525号-2 &nbsp; 渝ICP备 10002905 &nbsp;增值电信业务经营许可证：渝B2-20140042 &nbsp; Copyright ©
         2007-2016 epet.com &nbsp;重庆易宠科技有限公司</p>
 </div>
@@ -114,8 +114,8 @@
                     minlength: 4,
                     maxlength: 20
                 },
-                confpas:{
-                    equalTo:"#password"
+                confpas: {
+                    equalTo: "#password"
                 }
 
             },
@@ -123,7 +123,7 @@
 
                 userph: {
                     required: "不能为空！",
-                    minlength:"请输入11位的电话号码",
+                    minlength: "请输入11位的电话号码",
                     maxlength: "请输入11位的电话号码"
                 },
                 vartify: {
@@ -133,7 +133,7 @@
 
                 },
                 dxvartify: {
-                    required:"不能为空",
+                    required: "不能为空",
                     minlength: "长度不对！",
                     maxlength: "长度不对"
                 },
@@ -146,8 +146,8 @@
                     required: "不能为空",
                     minlength: "长度不对",
                     maxlength: "长度不对"
-                },confpas:{
-                    equalTo:"两次密码输入不一致！"
+                }, confpas: {
+                    equalTo: "两次密码输入不一致！"
                 }
             },
             errorElement: "em",
@@ -155,8 +155,8 @@
                 lable.text("").addClass("success");
                 lable.parent().find("input").removeClass("error");
             },
-            highlight: function(element, errorClass) {
-                $(element).parent().find("."+errorClass).removeClass("success");
+            highlight: function (element, errorClass) {
+                $(element).parent().find("." + errorClass).removeClass("success");
                 $(element).parent().find("input").addClass("error");
             }
 
