@@ -1,3 +1,43 @@
+
+.fkleft {
+    height: 30px;
+    width: 80px;
+    float: left;
+    padding-top: 10px;
+}
+
+.fkmiddle {
+    height: 30px;
+    width: 1070px;
+    float: left;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.fkright {
+    height: 30px;
+    width: 50px;
+    float: left;
+    padding-top: 10px;
+}
+
+.fkmiddle a {
+    margin: 0px 10px;
+    color: #666;
+    display: inline-block;
+    height: 30px;
+}
+
+.link {
+    padding: 15px;
+}
+
+.link a {
+    margin: 10px 20px 0 0;
+    color: #666;
+    display: inline-block;
+}
+
 .footer-content {
     background: #F5F5F5;
 }

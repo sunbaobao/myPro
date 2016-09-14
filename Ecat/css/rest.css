@@ -229,6 +229,13 @@ table {
     margin-right: 5px;
 }
 
+.border-eee {
+    border: 1px solid #eee;
+}
+
+.mb30 {
+    margin-bottom: 30px;
+}
 .mt {
     margin-top: 10px;
 }

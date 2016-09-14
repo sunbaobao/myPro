@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>goodslist</title>
+    <link rel="stylesheet" href="css/rest.css" type="text/css">
+    <link rel="stylesheet" href="css/goodslist.css" type="text/css">
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+<!--head-->
+<div id="head"></div>
+<!--main-->
+<div id="main" class="w-max ct mb20 mt">
+    <div class="pet-onav w-max ct">
+        <div class="onav-cont">
+            <span class="c666">猫猫<em class="gnum">8510</em></span><b></b>
+            <ul>
+                <li><a href="#">狗狗<em class="gnum">19587</em></a></li>
+                <li><a href="#">猫猫<em class="gnum">8510</em></a></li>
+            </ul>
+        </div>
+        <label></label>
+        <div class="onav-cont">
+            <span class="c666">猫咪主粮<em>426</em></span><b></b>
+            <ul>
+                <li><a href="#">猫咪主粮<em class="gnum">426</em></a></li>
+                <li><a href="#">猫咪零食<em class="gnum">543</em></a></li>
+                <li><a href="#">猫咪日用<em class="gnum">1285</em></a></li>
+                <li><a href="#">猫咪玩具<em class="gnum">688</em></a></li>
+                <li><a href="#">猫咪保健<em class="gnum">568</em></a></li>
+                <li><a href="#">猫咪医疗<em class="gnum">585</em></a></li>
+                <li><a href="#">猫咪出行<em class="gnum">406</em></a></li>
+                <li><a href="#">猫咪装扮<em class="gnum">99</em></a></li>
+                <li><a href="#">猫咪美容<em class="gnum">396</em></a></li>
+                <li><a href="#">猫咪香波<em class="gnum">358</em></a></li>
+                <li><a href="#">猫咪周边<em class="gnum">12</em></a></li>
+                <li><a href="#">猫咪定制<em class="gnum">0</em></a></li>
+                <li><a href="#">猫咪试用<em class="gnum">1</em></a></li>
+                <li><a href="#">猫猫书籍<em class="gnum">57</em></a></li>
+            </ul>
+        </div>
+        <label></label>
+        <div class="onav-cont">
+            <span class="c666">国产猫粮<em class="gnum">346</em></span><b></b>
+            <ul>
+                <li><a href="#">进口猫粮<em class="gnum">393</em></a></li>
+                <li><a href="#">国产猫粮<em class="gnum">346</em></a></li>
+                <li><a href="#">拆零试吃<em class="gnum">38</em></a></li>
+                <li><a href="#">处方猫粮<em class="gnum">42</em></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="w-min fl clearfix">
+        <div class="gcl mb">
+            <h2>猫咪主粮</h2>
+        </div>
+    </div>
+</div>
+<!--footer-->
+<div id="foot"></div>
+</body>
+<script>
+    //    $(function () {
+    //        $.ajax({
+    //            url: "http://www.epet.com/json/data.html",
+    //            type: "get",
+    //
+    //            _: "1473825364921",
+    //            app: "goodslist",
+    //            callback: "jQuery17105227256543179872_1473825364870",
+    //            inajax: "1",
+    //            jsoncallback: "mycal",
+    //            t: "1473825364919",
+    //
+    //            dataType: "jsonp",
+    //            success: function (res) {
+    //                alert(res);
+    //            }
+    //        });
+    //        function mycal(res) {
+    //            alert(res);
+    //        }
+    //    });
+</script>
+<script>
+    $(function () {
+        //和主页头部样式的区别
+        $("#head").load("head.html", function () {
+            $(".main-list-l").children().css("display", "none");
+            $("#nav").css("border-bottom", "2px solid #6a4385");
+            $(".main-title").on("mouseleave", "span", function (e) {
+                //$(this).addClass("hov").siblings().removeClass("hov");
+                // console.log(($(e.relatedTarget).hasClass("main-list-l")));
+                //  console.log(($(e.relatedTarget)));
+                if ($(e.relatedTarget).parents(".main-list-l").length != 0 || ($(e.relatedTarget).hasClass("main-list-l"))) {
+                    return;
+                }
+                $(".main-list-l").children().eq($(this).index()).css("display", "none")
+            });
+            $(".main-list-l").children().on({
+                mouseenter: function () {
+                    $(this).css("display", "block");
+                },
+                mouseleave: function (e) {
+                    if ($(e.relatedTarget).parents(".main-list-r").length != 0 ||
+                            ($(e.relatedTarget).hasClass("main-list-r")) || $(e.relatedTarget).parents(".cate-action").length != 0 ||
+                            ($(e.relatedTarget).hasClass("cate-action"))) {
+                        return;
+                    }
+                    $(this).css("display", "none");
+                }
+            })
+            $(".main-list-r").on("mouseleave", function () {
+                $(".main-list-l").children().css("display", "none");
+
+            })
+            $(".cate-action").on("mouseleave", function () {
+                $(".main-list-l").children().css("display", "none");
+            })
+        });
+        $("#foot").load("foot.html");
+    })
+</script>
+</html>

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>head</title>
     <link href="css/head.css" type="text/css" rel="stylesheet">
+    <!--<link href="css/rest.css" type="text/css" rel="stylesheet">-->
+    <!--<script src="js/jquery-1.11.3.js"></script>-->
+    <!--<script src="js/jquery.cookie.js"></script>-->
 </head>
 <body>
 <!--header-->
@@ -34,7 +37,7 @@
             </li>
             <li class="cart-t"><i></i><a href="#">购物车(<em id="cart_num">0</em>)</a></li>
             <li><a href="register.html">[注册]</a></li>
-            <li><a href="register.html">[登录]</a></li>
+            <li><a href="login.html" id="h-login">[登录]</a></li>
         </ul>
     </div>
 </div>
@@ -71,16 +74,29 @@
     <div class="nav clearfix">
         <div class="nav-list fl">
             <div class="main-title">
-                <span class="epet-type"><a href="#">猫猫</a><b class="cate1"></b></span>
-                <span class="hov" style="background-color: cyan">商品分类<b class="cate2"></b></span>
+                <span class="epet-type">猫猫<b class="cate1"></b></span>
+                <span class="hov" id="titles">商品分类<b class="cate2"></b></span>
             </div>
             <div id="main-list">
                 <!--左边详细列表-->
                 <div class="main-list-l">
                     <!--宠物分类-->
-                    <div class="list-type" style="display: none;"></div>
+                    <div class="list-type" style="display:block;">
+                        <dl>
+                            <dd>
+                                <a href="#"><span></span></a>
+                                <p>19587种精选宝贝</p>
+                                <a href="#" class="p-link">点击切换</a>
+                            </dd>
+                            <dd><a href="#"><span class="catnow"></span></a>
+                                <p>19587种精选宝贝</p>
+                                <a href="#" class="p-link">你正在猫猫站溜达</a>
+                            </dd>
+                            <span class="cat-shatype"><a href="#"><img src="images/cat-shatype.jpg"></a></span>
+                        </dl>
+                    </div>
                     <!--商品分类-->
-                    <div class="detype rela">
+                    <div class="detype rela" style="display: none;">
                         <ul class="clearfix">
                             <li class="">
                                 <h3><span class="menuIcoBg menu1"></span>
@@ -294,6 +310,21 @@
             catA.css("display", "none");
             p.removeClass("hov");
 
+        })
+    })
+</script>
+<script>
+    $(function () {
+        if ($.cookie("username")) {
+            $("#h-login").text($.cookie("username")).attr("href", "javascript:;");
+        }
+    })
+</script>
+<script>
+    $(function () {
+        $(".main-title").on("mouseenter", "span", function () {
+            $(this).addClass("hov").siblings().removeClass("hov");
+            $(".main-list-l").children().eq($(this).index()).css("display", "block").siblings().css("display", "none");
         })
     })
 </script>

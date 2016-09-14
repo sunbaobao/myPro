@@ -28,14 +28,69 @@
 <!--main-->
 <div id="logmain" class="bgwh rel">
     <div class="ovh ct abs logbg">
-        <form id="login-form" action="" method="post">
+        <form id="login-form" action=" " method="post">
             <div class="logind abs" id="logind">
                 <div class="overflow logintab">
                     <span class="fl ftc ft14 c999 Logindefalut">普通登录</span>
-                    <span class="fl ftc ft14 c999">手机登录</span>
+                    <span class="fl ftc ft14 c999">手机动态密码登录</span>
                 </div>
-                <div class="overflow logincontent" id="logininput">
-
+                <div class="overflow logincontent rel" id="logininput">
+                    <div class="w100 ftc cred ft12 abs " id="backinfo"></div>
+                    <!--普通登录-->
+                    <div id="login_0" style="display:block">
+                        <div class="overflow Loginuser">
+                            <span class="inblock Loginico Uderico"></span>
+                            <input class="ft14 c999 Userinput" name="userID" id="user0" value=""
+                                   placeholder="手机号/邮箱/用户名" type="text">
+                        </div>
+                        <div class="overflow Loginuser">
+                            <span class="inblock Loginico Uderico Pwdico"></span>
+                            <input class="ft14 c999 Userinput logpass" name="password" id="password0" value=""
+                                   placeholder="密码" type="password">
+                        </div>
+                    </div>
+                    <!--手机动态登录-->
+                    <div class="overflow Logoincontent" id="login_1" style="display:none;">
+                        <div class="overflow Loginuser">
+                            <span class="inblock Loginico Uderico phoneico"></span>
+                            <input class="ft14 c999 Userinput" name="mobelphonel" id="user1" value=""
+                                   placeholder="已注册的手机号" type="text">
+                        </div>
+                        <div class="overflow Loginuser varify">
+                            <span class="inblock Loginico Uderico varifyico"></span>
+                            <input class="ft14 c999 Userinput" style="width: 150px;" name="varify" id="varify" value=""
+                                   placeholder="验证码" type="text">
+                        </div>
+                        <div class="varifyimg">
+                            <img src="images/login/yzm.png" id="varifyimglog" class="codevar">
+                        </div>
+                        <div class="overflow Loginuser logphonecode">
+                            <span class="inblock Loginico Uderico codeico"></span>
+                            <input class="ft14 c999 Userinput" style="width: 150px;" id="dt_password" name="dt_password"
+                                   value="" placeholder="动态码" type="text">
+                        </div>
+                        <div class="overflow Loginuser phonecodebtn" id="phonecodebtnlogin">
+                            <span>获取动态密码</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="overflow mt20 logintext">
+                    <input type="checkbox" checked="checked" class="">
+                    <span class="ft14 c666">自动登录</span>
+                    <a class="fr c666 ft14 dib" href="javascript:;">忘记密码？</a>
+                </div>
+                <a class="ftc dib ft20 cfff loginbtn" href="javascript:;" id="loginbtn">登 &nbsp;&nbsp;&nbsp; 录</a>
+                <div class="ovh hezuo">
+                    <div class="fl overflow">
+                        <span class="ft14 c666">合作登录网站：</span>
+                        <div class="mt overflow hzlist">
+                            <a class="inblock hzicon qqicon" href="javascript:;"></a>
+                            <a class="inblock hzicon zfbicon" href="javascript:;"></a>
+                            <a class="inblock hzicon xlicon" href="javascript:;"></a>
+                            <a class="inblock hzicon wxicon" href="javascript:;"></a>
+                        </div>
+                    </div>
+                    <a href="register.html" class="fr dib ft14 c666">注册账号</a>
                 </div>
             </div>
         </form>
@@ -52,7 +107,39 @@
     <p class="c999 ftc">渝ICP备13005525号-2 &nbsp; 渝ICP备 10002905 &nbsp;增值电信业务经营许可证：渝B2-20140042 &nbsp; Copyright ©
         2007-2016 epet.com &nbsp;重庆易宠科技有限公司</p>
 </div>
-
 </body>
+<script>
+    $(function () {
+        $(".logintab").on("click", "span", function () {
+            $(this).addClass("Logindefalut").siblings().removeClass("Logindefalut");
+            if ($(this).index() == 0) {
+                $("#login_0").css("display", "block").siblings().css("display", "none");
+            } else {
+                $("#login_1").css("display", "block").siblings().css("display", "none");
+            }
+        });
+        $("#loginbtn").click(function () {
+            //alert(1);
+            $("#backinfo").text("");
+            $.post("http://datainfo.duapp.com/shopdata/userinfo.php", {
+                status: "login",
+                userID: $("#user0").val(),
+                password: $("#password0").val()
+            }, function (res) {
+                switch (res) {
+                    case "0":
+                        $("#backinfo").text("用户名不存在！");
+                        break;
+                    case "1":
+                        $("#backinfo").text("用户名与密码不符！");
+                        break;
+                    default:
+                        $.cookie("username", $("#user0").val());
+                        window.location.href = "index.html";
 
+                }
+            })
+        })
+    });
+</script>
 </html>

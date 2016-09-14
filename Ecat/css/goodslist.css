@@ -1,0 +1,80 @@
+.pet-onav {
+    margin: 10px 0px;
+}
+
+.onav-cont {
+    border: 1px solid #ddd;
+    height: 24px;
+    line-height: 24px;
+    position: relative;
+    display: inline-block;
+    padding: 0 25px 0 8px;
+    background: #fff;
+}
+
+.onav-cont span {
+    display: inline-block;
+    padding: 0 10px;
+    min-width: 50px;
+    cursor: pointer;
+}
+
+.onav-cont .gnum {
+    color: #999;
+    padding-left: 5px;
+}
+
+.onav-cont b {
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    background: url("../images/bg2.png") -38px -1258px;
+    right: 15px;
+    top: 10px;
+}
+
+.pet-onav label {
+    display: inline-block;
+    background: url("../images/bg2.png") -38px -1265px;
+    width: 5px;
+    height: 9px;
+    margin: 0 10px;
+}
+
+.onav-cont ul {
+    position: absolute;
+    top: 24px;
+    left: -1px;
+    width: 100%;
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 5px 0;
+    display: none;
+    z-index: 150;
+}
+
+.onav-cont:hover ul {
+    display: block;
+}
+
+.onav-cont li {
+    line-height: 22px;
+    height: 22px;
+    overflow: hidden;
+    text-indent: 18px;
+    border-bottom: 1px dashed #eee;
+}
+
+.gcl {
+    background-color: #FFF;
+    border: 1px #ddd solid;
+}
+
+.gcl h2 {
+    height: 35px;
+    line-height: 35px;
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px #ddd dotted;
+}

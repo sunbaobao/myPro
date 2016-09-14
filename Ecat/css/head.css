@@ -326,9 +326,15 @@ a.btn, a.btn span {
     width: 112px;
     height: 32px;
     text-align: center;
-    border: 1px solid #e1e1e1;
-    color: #FFFFFF;
+    border: 1px solid #dddddd;
+    color: #000;
     cursor: pointer;
+}
+
+.main-title span.hov {
+    color: #FFFFFF;
+    border: 1px solid #6c32a9;
+    background-color: #6c32a9;
 }
 
 .main-title span:hover b {
@@ -490,6 +496,54 @@ a.btn, a.btn span {
     margin-right: 8px;
 }
 
+.list-type {
+    height: 358px;
+    overflow: hidden;
+}
+
+.list-type dd {
+    height: 179px;
+    border-bottom: 1px dotted #ccc;
+    text-align: center;
+    background: #fff;
+}
+
+.list-type span {
+
+    display: inline-block;
+    width: 63px;
+    height: 63px;
+    margin-top: 25px;
+    background: url("../images/pet-cate.png");
+
+}
+
+.list-type p {
+    line-height: 24px;
+    padding-bottom: 4px;
+}
+
+.p-link {
+    display: inline-block;
+    width: 132px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #459d36;
+    color: #459d36;
+    border-radius: 3px;
+}
+
+.list-type .catnow {
+    background-position: 0 -711px;
+}
+
+.list-type .cat-shatype {
+    position: absolute;
+    top: 180px;
+    right: 10px;
+    background: none;
+}
 /*左边小图标*/
 .menu1 {
     background-position: 100% 1px;
