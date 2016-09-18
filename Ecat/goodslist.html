@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="css/goodslist.css" type="text/css">
     <script src="js/jquery-1.11.3.js"></script>
     <script src="js/jquery.cookie.js"></script>
-    <script src="../js/angular.min.js"></script>
+    <!--<script src="../js/angular.min.js"></script>-->
+    <script src="js/jquery.pagination.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/pagination.css">
 </head>
 <body>
 <!--head-->
 <div id="head"></div>
 <!--main-->
-<div id="main" class="w-max ct mb20 mt">
+<div id="main" class="w-max ct mb20 mt  clearfix">
     <div class="pet-onav w-max ct">
         <div class="onav-cont">
             <span class="c666">猫猫<em class="gnum">8510</em></span><b></b>
@@ -53,10 +55,243 @@
             </ul>
         </div>
     </div>
-    <div class="w-min fl clearfix">
+    <div class="w-min fl">
         <div class="gcl mb">
             <h2>猫咪主粮</h2>
+            <div class="gcl-li">
+                <a href="#">
+                    <img src="images/goods/gdl0.jpg">
+                    <span>进口猫量</span>
+                    <em class="c999">222</em>
+                </a>
+                <a href="#" class="hov">
+                    <img src="images/goods/gdl1.jpg">
+                    <span>国产猫量</span>
+                    <em class="c999">422</em>
+                </a>
+                <a href="#">
+                    <img src="images/goods/gdl2.jpg">
+                    <span>拆零试吃</span>
+                    <em class="c999">322</em>
+                </a>
+                <a href="#">
+                    <img src="images/goods/gdl3.jpg">
+                    <span>处方猫量</span>
+                    <em class="c999">22</em>
+                </a>
+            </div>
         </div>
+        <div class="box ftc mb pad10">
+            <span class="ft14 bold">未找到心仪的商品？</span>
+            <br><br>
+            <a class="sbtn" href="#"><span>预定没有的商品</span></a>
+        </div>
+        <div class="box mb">
+            <h1><span>国产猫粮介绍</span></h1>
+            <p class="pad10 ti2 c444">
+                E宠商城国产天然猫粮均保证国内正规厂家、代理商供货，组成天然猫粮的所有主要原料均来自天然，不添加任何人工化学合成类的防腐剂、抗氧化剂等。商品丰富、物美价廉、众多商品正在促销中，欢迎大家选购。 </p>
+        </div>
+    </div>
+    <div class="fr w-mid">
+        <div class="filter_box borcol bgwh mb">
+            <table width="100%" cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                    <th>品牌：</th>
+                    <td>
+                        <div class="rela">
+                            <div class="fil-max fl" style="height: 118px; padding-bottom: 1px; overflow: hidden;">
+                                <div class="fil-con">
+                                    <div class="filBlock " style="display: block;">
+                                        <div class="fil-li">
+                                            <a title="全部" class="ahov" href="javascript:;"><span>全部</span></a>
+                                        </div>
+                                        <div class="fil-li">
+                                            <a title="伟嘉"
+                                               href="javascript:;"><span>伟嘉</span></a>
+                                        </div>
+                                        <div class="fil-li">
+                                            <a title="伟嘉"
+                                               href="javascript:;"><span>伟嘉</span></a>
+                                        </div>
+                                        <div class="fil-li">
+                                            <a title="伟嘉"
+                                               href="javascript:;"><span>伟嘉</span></a>
+                                        </div>
+                                        <div class="fil-li">
+                                            <a title="伟嘉"
+                                               href="javascript:;"><span>伟嘉</span></a>
+                                        </div>
+                                        <div class="fil-li">
+                                            <a title="伟嘉"
+                                               href="javascript:;"><span>伟嘉</span></a>
+                                        </div>
+                                        <div class="fil-li">
+                                            <a title="伟嘉"
+                                               href="javascript:;"><span>伟嘉</span></a>
+                                        </div>
+                                        <div class="fil-li">
+                                            <a title="伟嘉"
+                                               href="javascript:;"><span>伟嘉</span></a>
+                                        </div>
+                                        <div class="fil-li">
+                                            <a title="伟嘉"
+                                               href="javascript:;"><span>伟嘉</span></a>
+                                        </div>
+                                        <div class="fil-li">
+                                            <a title="伟嘉"
+                                               href="javascript:;"><span>伟嘉</span></a>
+                                        </div>
+                                        <div class="fil-li">
+                                            <a title="伟嘉"
+                                               href="javascript:;"><span>伟嘉</span></a>
+                                        </div>
+                                        <div class="fil-li">
+                                            <a title="伟嘉"
+                                               href="javascript:;"><span>伟嘉</span></a>
+                                        </div>
+                                        <div class="fil-li">
+                                            <a title="伟嘉"
+                                               href="javascript:;"><span>伟嘉</span></a>
+                                        </div>
+                                        <div class="fil-li">
+                                            <a title="伟嘉"
+                                               href="javascript:;"><span>伟嘉</span></a>
+                                        </div>
+                                        <div class="fil-li">
+                                            <a title="伟嘉"
+                                               href="javascript:;"><span>伟嘉</span></a>
+                                        </div>
+                                        <div class="fil-li">
+                                            <a title="伟嘉"
+                                               href="javascript:;"><span>伟嘉</span></a>
+                                        </div>
+                                        <div class="fil-li">
+                                            <a title="伟嘉"
+                                               href="javascript:;"><span>伟嘉</span></a>
+                                        </div>
+                                        <div class="fil-li">
+                                            <a title="伟嘉"
+                                               href="javascript:;"><span>伟嘉</span></a>
+                                        </div>
+
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fil-more"><span class="o-more"><b></b><i>更多</i></span></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>年龄：</th>
+                    <td>
+                        <a href="javascript:;" class="ahov"><span>全部</span></a>
+                        <a href="javascript:;"><span>幼猫</span></a>
+                        <a href="javascript:;"><span>成猫</span></a>
+                        <a href="javascript:;"><span>老猫</span></a>
+                        <a href="javascript:;"><span>全猫</span></a>
+                        <a href="javascript:;"><span>离乳及怀孕哺乳猫</span></a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>配方：</th>
+                    <td>
+                        <a href="javascript:;" class="ahov"><span>全部</span></a>
+                        <a href="javascript:;"><span>鹿肉</span></a>
+                        <a href="javascript:;"><span>兔肉</span></a>
+                        <a href="javascript:;"><span>鸭肉</span></a>
+                        <a href="javascript:;"><span>火鸡</span></a>
+                        <a href="javascript:;"><span>鸭肉</span></a>
+                        <a href="javascript:;"><span>火鸡</span></a>
+                        <a href="javascript:;"><span>鸡肉</span></a>
+                        <a href="javascript:;"><span>鱼肉</span></a>
+                        <a href="javascript:;"><span>羊肉</span></a>
+                        <a href="javascript:;"><span>牛肉</span></a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>均价：</th>
+                    <td>
+                        <a href="javascript:;" class="ahov"><span>全部</span></a>
+                        <a href="javascript:;"><span>10元以下/斤</span></a>
+                        <a href="javascript:;"><span>10.1-15元/斤</span></a>
+                        <a href="javascript:;"><span>15.1-20元/斤</span></a>
+                        <a href="javascript:;"><span>20.1-25元/斤</span></a>
+                        <a href="javascript:;"><span>25.1-30元/斤</span></a>
+                        <a href="javascript:;"><span>30.1-40元/斤</span></a>
+                        <a href="javascript:;"><span>40.1-50元/斤</span></a>
+                        <a href="javascript:;"><span>50元/斤以上</span></a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>重量：</th>
+                    <td>
+                        <a href="javascript:;" class="ahov"><span>全部</span></a>
+                        <a href="javascript:;"><span>超小包（1.5kg以下）</span></a>
+                        <a href="javascript:;"><span>小包（1.5-5kg）</span></a>
+                        <a href="javascript:;"><span>中包（5.1-10kg）</span></a>
+                        <a href="javascript:;"><span>大包（10.1-15kg）</span></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="gdmenu-out mb bgwh">
+            <div id="gdmenu" class="w-mid">
+                <div class="borcol lis_pl ">
+                    <div class="lis_pll clearfix fl paixufl">
+                        <a href="#"><span class="nobg current ">默认</span></a>
+                        <a href="javascript:;" class="desc"><span class="arrow ">销量</span></a>
+                        <a href="javascript:;" class="desc"> <span class="arrow ">人气</span></a>
+                        <a href="javascript:;" class="desc"><span class="arrow ">新品</span></a>
+                        <a href="javascript:;" class="desc"><span class="arrow ">评论</span></a>
+                        <a href="javascript:;" class="desc"><span class="pxprice pxpriceup ">价格</span></a>
+                        <span class="nobg"><input type="checkbox" class="fl" style="margin: 19px 2px 0 10px;">只显示有货
+                        </span>
+                    </div>
+                    <div class="fr lis_plr pad10">
+                        <a href="javascript:;">下一页</a>
+                        <a href="#" class="c999">上一页</a>
+                        <span class="fr">1/6</span>
+                        <span class="mr fr">共找到<span class="cred">348</span>件商品</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list_box clearfix">
+            <div class="list_box_li" data-id="">
+                <div class="list_box_con">
+                    <div class="gimg rel">
+                        <a href="#">
+                            <img src="images/goods/gl2.jpg">
+                        </a>
+                    </div>
+                    <div class="gimg-min">
+                        <ul>
+                            <li class="hov"><img src="images/goods/gl2.jpg"></li>
+                            <li><img src="images/goods/gl11.jpg"></li>
+                        </ul>
+                    </div>
+                    <a class="gtitle" href="#">比瑞吉 基础呵护系列 室内成猫粮 12kg </a>
+                    <p class="gprice">
+                        <span class="c999 through">￥654.00</span>
+                        <span class="cred ft16 price">￥545.00</span>
+                        <span class="c999">22.71/斤</span>
+                    </p>
+                    <p class="c999 deal-cnt"><em>已售636袋</em><em class="lis_icon">193人互动</em></p>
+                </div>
+                <div class="buy clearfix">
+                    <a href="#" class="fl dib buyl">
+                        <span>收藏</span>
+                    </a>
+                    <a href="#" class="fr dib buyr">
+                        <span>加入购物车</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="Pagination" class="pagination"></div>
     </div>
 </div>
 <!--footer-->
@@ -122,6 +357,53 @@
             })
         });
         $("#foot").load("foot.html");
+    })
+</script>
+<script>
+    $(function () {
+
+    })
+</script>
+<script>
+    $(function () {
+        var listBox = $(".list_box").eq(0);
+        $.get("goodslist.json", function (res) {
+            // console.log(res); cs ww
+
+            var l = res.length;
+            var pages = Math.ceil(res.length / 20);
+            $('#Pagination').pagination(pages, {
+                num_edge_entries: 1, //边缘页数
+                num_display_entries: 4, //主体页数
+                items_per_page: 1, //每页显示1项
+                prev_text: "上一页",
+                next_text: "下一页",
+                link_to: "javascript:;",
+                callback: function (index) {
+                    var divs = '';
+                    for (var i = index * 20; i < (index + 1) * 20; i++) {
+                        if (i < l) {
+                            var lis = '';
+                            for (var j = 0; j < res[i].imgs.length; j++) {
+                                if (j == 0) {
+                                    lis = '<li class="hov"><img src="' + res[i].imgs[j] + '"></li>';
+                                } else {
+                                    lis += '<li><img src="' + res[i].imgs[j] + '"></li>';
+                                }
+                            }
+                            divs += '<div class="list_box_li" data-id="' + res[i].id + '"><div class="list_box_con"><div class="gimg rel"><a href="#"><img src="' + res[i].imgs[0] + '"></a></div><div class="gimg-min"><ul>' + lis + '</ul></div><a class="gtitle" href="#">' + res[i].tip + '</a><p class="gprice"><span class="c999 through">￥' + res[i].price[0] + '</span><span class="cred ft16 price">￥' + res[i].price[1] + '</span><span class="c999">' + res[i].price[2] + '/斤</span></p><p class="c999 deal-cnt"><em>已售' + res[i].sale + '袋</em><em class="lis_icon">' + res[i].com + '人互动</em></p></div><div class="buy clearfix"><a href="#" class="fl dib buyl"><span>收藏</span></a><a href="#" class="fr dib buyr"><span>加入购物车</span></a></div></div>';
+                        }
+                        //console.log(divs);
+                        listBox.html(divs);
+                        $(".list_box_li .gimg-min").on("mouseenter", "li", function () {
+                            $(this).addClass("hov").siblings().removeClass("hov");
+                            $(this).parents(".list_box_li").find(".gimg img").attr("src", $(this).find("img").attr("src"));
+                        });
+                    }
+                }
+            });
+
+        })
     })
 </script>
 </html>
