@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cart</title>
+    <link rel="stylesheet" href="css/cart.css" type="text/css">
+    <link rel="stylesheet" href="css/rest.css" type="text/css">
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/cart.js"></script>
+</head>
+<body class="bgwh">
+<!--header-->
+<div id="header">
+    <div class="header">
+        <div class="headfr">
+            <a href="#" class="fl"><img src="images/register/cart-logo.png"></a>
+            <span class="fl c333 ml ft24 cart-text">购物车</span>
+        </div>
+        <div class="headfl fr mt20 clearfix">
+            <input type="text" class="sear-text">
+            <a href="javascript:;" class="fr cfff ftc">搜索</a>
+        </div>
+    </div>
+
+</div>
+<!--main-->
+<div id="main" class="w-max ct">
+    <div id="cart-menu">
+        <ul class="cart-menu clearfix nav-menu">
+            <li id="one1" class="current">购物车<em class="fcolor ml5">4</em></li>
+            <li id="one2">我的收藏<em class="fcolor ml5">7</em></li>
+            <li id="one3">我购买过<em class="fcolor ml5">0</em></li>
+            <li id="one4">最近浏览<em class="fcolor ml5">10</em></li>
+        </ul>
+        <div class="nav-currentt" style="width: 122px; left: 0px; overflow: hidden;">
+            <div class="arrow ftc"><i></i></div>
+        </div>
+    </div>
+    <div class="contantBox">
+        <table class="mt cart-table mb30" style="display: none" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+            <tr>
+                <td class="tabF" colspan="5">
+                    <input type="checkbox" checked class="fl mt5" id="check">
+                    <span class="fl cfff ml5 epetfh ft13">西部大仓</span>
+                    <b class="fl mt5 ml rela pointer">
+                        <img src="images/cart/help.jpg">
+                        <div class="cart-tc bgwh">
+                            <em></em>
+                            <i></i>
+                            <p class="c333 ft12">以下商品由重庆仓发货，支持余额支付、货到付款、在线支付，全国满99包邮，部分地区满38包邮。</p>
+                        </div>
+                    </b>
+                    <div class="baoyou-tip ymbaoyou-tip fl ml25 mt5 c666">
+                        <span>已包邮</span> 订单已包邮（顺丰、EMS不包邮
+                    </div>
+                </td>
+            </tr>
+            <!-- <tr class="cart-order ">
+                 <td width="50" align="center">
+                     <input autocomplete="off" checked="checked" type="checkbox">
+                 </td>
+                 <td width="500" valign="middle">
+                     <div class="por-img fl overflow bgwhite ftc">
+                         <a href="#" target="_blank">
+                             <img src="images/goods/gl2.jpg" style="width: 80px;">
+                         </a>
+                     </div>
+                     <div class="por-intro fl ml20 mt" style="margin-top: 30px;">
+                         <a target="_blank" class="c333">
+                             皇家royal canin 室内成猫粮去毛球配方2kg 2kg </a>
+                     </div>
+                     <div class="clear"></div>
+                 </td>
+                 <td style="padding-top:20px;" width="150" align="center">
+                     <div class="buynum-wrap clearfix">
+                         <span id="less1" class="ft18 fl ">-</span>
+                         <input readonly="true" class="text buynum ftc fl bgwhite" value="1" id="num"
+                                size="2" type="text">
+                         <span id="add1" class="fl ">+</span>
+                     </div>
+                     <p class="c666 mtneg10">有货</p>
+                 </td>
+                 <td class="c000 bold ft14" width="200" align="center">
+                     ￥123.00
+                 </td>
+                 <td width="200" align="center">
+                     <a href="javascript:;" class="c666" >[收藏]</a>
+                     <a href="javascript:;" class="c666">[删除]</a>
+                 </td>
+             </tr>-->
+            <tr>
+                <td colspan="5" class="pt30 pb10">
+                    <div class="balance">
+                        <div class="w-max ct">
+                            <div class="fl c333 pl10">
+                                <label class="mr20">
+                                    <input class="all-checkbox" checked type="checkbox">全选
+                                </label>
+                                <a href="javascript:;" class="c333">[ 删除选中商品 ]</a>
+                                <a href="javascript:;" class="c333 ml5">[ 收藏选中商品 ]</a>
+                            </div>
+                            <div class="fr cart-price">
+                                总价（不含运费）:<strong class="ft18" id="ccont">￥123.00</strong>
+                                <a href="javascript:;" class="cfff go-balance ftc bold ft18 ml20 bggreen">去结算(<em
+                                        id="nnum"></em>)</a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="mt">
+                    <a class="detail" href="detail.html">继续购物</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="ftc">
+            <div class="null">
+                <h1 class="ft30 c999">您的购物车空空如也，快去选购吧 =￣ω￣=</h1>
+                <div class="goBtn mt5">
+                    <a href="goodslist.html">列表页</a>
+                    <a href="index.html">去首页</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--foot-->
+<div id="foot"></div>
+</body>
+<script>
+    $(function () {
+        $("#foot").load("foot.html");
+    })
+</script>
+<script>
+    //nav 导航小样式
+    $(function () {
+        $(".cart-menu").on("mouseenter", "li", function () {
+            $(".nav-currentt").stop(true).animate({
+                left: ($(this).offset().left - 30),
+                width: $(this).outerWidth()
+            }, 300, "swing")
+        });
+        $(".cart-menu").on("mouseleave", function () {
+            $(".nav-currentt").stop(true).animate({
+                left: 0,
+                width: $(this).children().eq(0).outerWidth()
+            }, 300, "swing")
+        })
+    });
+</script>
+<script>
+    var cart_re = function () {
+        var goods = $.parseJSON($.cookie("goods"));
+        var cont = 0;
+        var ccont = 0;
+        var nnum = 0;
+        if (goods && (goods.length != 0)) {
+            $(".cart-table").css("display", "block").siblings().css("display", "none");
+            $.get("goodslist.json", function (res) {
+                var trs = '';
+                for (var i in goods) {
+                    for (var j in res) {
+                        if (res[j].id == goods[i].id) {
+                            cont = (res[j].price[1] * goods[i].num);
+                            cont = Math.round(cont * 100) / 100;
+                            nnum += goods[i].num;
+                            ccont += cont;
+                            trs += '<tr class="cart-order" data-id="' + res[j].id + '"><td width="50" align="center"><input autocomplete="off" checked="checked" type="checkbox"></td><td width="500" valign="middle"><div class="por-img fl overflow bgwhite ftc"><a href="#" target="_blank"><img src="' + res[j].imgs[0] + '" style="width: 80px;"></a></div><div class="por-intro fl ml20 mt" style="margin-top: 30px;"><a target="_blank" class="c333">' + res[j].tip + '</a></div><div class="clear"></div></td><td style="padding-top:20px;" width="150" align="center"><div class="buynum-wrap clearfix"><span id="less1" class="ft18 fl ">-</span><input readonly="true"  class="text buynum ftc fl bgwhite" value="' + goods[i].num + '" id="num" size="2" type="text"><span id="add1" class="fl ">+</span></div><p class="c666 mtneg10">有货</p></td><td class="c000 bold ft14" width="200" align="center">￥' + cont + '</td><td width="200" align="center"><a href="javascript:;" class="c666">[收藏]</a><a href="javascript:;" class="c666">[删除]</a></td></tr>';
+                            break;
+                        }
+                    }
+                }
+                $(".cart-table>tbody").html('<tr><td class="tabF" colspan="5"><input type="checkbox" checked class="fl mt5" id="check"><span class="fl cfff ml5 epetfh ft13">西部大仓</span><b class="fl mt5 ml rela pointer"><img src="images/cart/help.jpg"><div class="cart-tc bgwh"><em></em><i></i><p class="c333 ft12">以下商品由重庆仓发货，支持余额支付、货到付款、在线支付，全国满99包邮，部分地区满38包邮。</p></div></b><div class="baoyou-tip ymbaoyou-tip fl ml25 mt5 c666"><span>已包邮</span> 订单已包邮（顺丰、EMS不包邮</div></td></tr>' + trs + '<tr><td colspan="5" class="pt30 pb10"><div class="balance"><div class="w-max ct"><div class="fl c333 pl10"><label class="mr20"><input class="all-checkbox" checked type="checkbox">全选</label><a href="javascript:;" class="c333">[ 删除选中商品 ]</a><a href="javascript:;" class="c333 ml5">[ 收藏选中商品 ]</a></div><div class="fr cart-price">总价（不含运费）:<strong class="ft18" id="ccont">￥123.00</strong><a href="javascript:;" class="cfff go-balance ftc bold ft18 ml20 bggreen">去结算(<em id="nnum"></em>)</a></div><div class="clear"></div></div></div></td></tr><tr><td class="mt"><a class="detail" href="detail.html">继续购物</a></td></tr>');
+                $("#ccont").text("￥" + ccont);
+                $("#nnum").text(nnum);
+            });
+        } else {
+            $(".cart-table").css("display", "none").siblings().css("display", "block");
+        }
+    };
+    cart_re();
+    $(function () {
+        $(".cart-table").on("click", "tbody>tr>td>a", function (e) {
+            //console.log($(this).text());
+            var goods = $.parseJSON($.cookie("goods"));
+            var id = $(this).parents(".cart-order").attr("data-id");
+            if ($(this).text() == "[删除]") {
+
+                for (var i in goods) {
+                    if (goods[i].id == id) {
+                        goods.splice(i, 1);
+                    }
+                }
+                $.cookie("goods", JSON.stringify(goods));
+                refirsh();
+                cart_re();
+            }
+        })
+    })
+</script>
+<script>
+
+</script>
+</html>

@@ -252,6 +252,14 @@ table {
     margin-right: 10px;
 }
 
+.rela {
+    position: relative;
+}
+
+.ml25 {
+    margin-left: 25px;
+}
+
 .mt15 {
     margin-top: 15px;
 }

@@ -201,7 +201,7 @@
             <li class="scart rtl">
                 <div class="newdot"></div>
                 <label>购物车<em>◆</em></label>
-                <a class="rtico rt-cart" href="#"></a>
+                <a class="rtico rt-cart" href="cart.html"></a>
             </li>
             <li class="rtl hov">
                 <label>我的订单<em>◆</em></label>
@@ -349,6 +349,9 @@
                     $(".cart_num").eq(n).text(l);
                 }
             })
+        }
+        if (typeof cart_re === "function") {
+            cart_re();
         }
     }
     refirsh()
