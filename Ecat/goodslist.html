@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="css/goodslist.css" type="text/css">
     <script src="js/jquery-1.11.3.js"></script>
     <script src="js/jquery.cookie.js"></script>
-    <!--<script src="../js/angular.min.js"></script>-->
     <script src="js/jquery.pagination.js"></script>
+    <script src="js/cart.js"></script>
     <link rel="stylesheet" type="text/css" href="css/pagination.css">
 </head>
 <body>
@@ -296,80 +296,96 @@
 </div>
 <!--footer-->
 <div id="foot"></div>
+<!--添加成功弹出框-->
+<div id="dialog">
+
+</div>
+<div class="fixd bgwh dia-con">
+    <i class="fl dib"><img src="images/buy_sd.jpg"></i>
+    <div class="fl ml20">
+        <p class=" lh24 ft12">恭喜，已成功添加到购物车！</p>
+        <p class=" lh24 ft12">购物车共有 <i class="cred" id="goodsl">7</i> 件商品，合计：<i class="cred ft18"
+                                                                                id="goodscont">254.40元</i></p>
+        <div style="padding-top: 10px;">
+            <a href="javascript:;" id="dia-conti" class="mr btn"><span>继续购物</span></a>
+            <a href="javascript:;" id="dia-submi" class="smbtn"><span>立即结算</span></a>
+        </div>
+    </div>
+</div>
 </body>
 <script>
-    //    $(function () {
-    //        $.ajax({
-    //            url: "http://www.epet.com/json/data.html",
-    //            type: "get",
-    //
-    //            _: "1473825364921",
-    //            app: "goodslist",
-    //            callback: "jQuery17105227256543179872_1473825364870",
-    //            inajax: "1",
-    //            jsoncallback: "mycal",
-    //            t: "1473825364919",
-    //
-    //            dataType: "jsonp",
-    //            success: function (res) {
-    //                alert(res);
-    //            }
-    //        });
-    //        function mycal(res) {
-    //            alert(res);
-    //        }
-    //    });
+    //添加cookie并跳转
+    $(function () {
+        $(".list_box").on("click", ".list_box_li>.list_box_con a", function () {
+            //console.log($(this).parents(".list_box_li").attr("data-id"));
+            $.cookie("detail-id", $(this).parents(".list_box_li").attr("data-id"));
+            location.href = "detail.html";
+        })
+    })
 </script>
 <script>
+    //成功添加购物车的关闭
     $(function () {
-        //和主页头部样式的区别
-        $("#head").load("head.html", function () {
-            $(".main-list-l").children().css("display", "none");
-            $("#nav").css("border-bottom", "2px solid #6a4385");
-            $(".main-title").on("mouseleave", "span", function (e) {
-                //$(this).addClass("hov").siblings().removeClass("hov");
-                // console.log(($(e.relatedTarget).hasClass("main-list-l")));
-                //  console.log(($(e.relatedTarget)));
-                if ($(e.relatedTarget).parents(".main-list-l").length != 0 || ($(e.relatedTarget).hasClass("main-list-l"))) {
-                    return;
-                }
-                $(".main-list-l").children().eq($(this).index()).css("display", "none")
-            });
-            $(".main-list-l").children().on({
-                mouseenter: function () {
-                    $(this).css("display", "block");
-                },
-                mouseleave: function (e) {
-                    if ($(e.relatedTarget).parents(".main-list-r").length != 0 ||
-                            ($(e.relatedTarget).hasClass("main-list-r")) || $(e.relatedTarget).parents(".cate-action").length != 0 ||
-                            ($(e.relatedTarget).hasClass("cate-action"))) {
-                        return;
-                    }
-                    $(this).css("display", "none");
-                }
-            })
-            $(".main-list-r").on("mouseleave", function () {
-                $(".main-list-l").children().css("display", "none");
-
-            })
-            $(".cate-action").on("mouseleave", function () {
-                $(".main-list-l").children().css("display", "none");
-            })
+        $("#dia-conti").on("click", function () {
+            $("#dialog").css("display", "none");
+            $(".dia-con").css("display", "none");
         });
-        $("#foot").load("foot.html");
+        $("#dia-submi").on("click", function () {
+            $("#dialog").css("display", "none");
+            $(".dia-con").css("display", "none");
+        })
     })
 </script>
 <script>
-    $(function () {
-
-    })
-</script>
-<script>
+    //分页插件
     $(function () {
         var listBox = $(".list_box").eq(0);
         $.get("goodslist.json", function (res) {
-            // console.log(res); cs ww
+            (function () {
+                //和主页头部样式的区别
+                $("#head").load("head.html", function () {
+                    $(".main-list-l").children().css("display", "none");
+                    $("#nav").css("border-bottom", "2px solid #6a4385");
+                    $(".main-title").on("mouseleave", "span", function (e) {
+                        //$(this).addClass("hov").siblings().removeClass("hov");
+                        // console.log(($(e.relatedTarget).hasClass("main-list-l")));
+                        //  console.log(($(e.relatedTarget)));
+                        if ($(e.relatedTarget).parents(".main-list-l").length != 0 || ($(e.relatedTarget).hasClass("main-list-l"))) {
+                            return;
+                        }
+                        $(".main-list-l").children().eq($(this).index()).css("display", "none")
+                    });
+                    $(".main-list-l").children().on({
+                        mouseenter: function () {
+                            $(this).css("display", "block");
+                        },
+                        mouseleave: function (e) {
+                            if ($(e.relatedTarget).parents(".main-list-r").length != 0 ||
+                                    ($(e.relatedTarget).hasClass("main-list-r")) || $(e.relatedTarget).parents(".cate-action").length != 0 ||
+                                    ($(e.relatedTarget).hasClass("cate-action"))) {
+                                return;
+                            }
+                            $(this).css("display", "none");
+                        }
+                    })
+                    $(".main-list-r").on("mouseleave", function () {
+                        $(".main-list-l").children().css("display", "none");
 
+                    })
+                    $(".cate-action").on("mouseleave", function () {
+                        $(".main-list-l").children().css("display", "none");
+                    })
+                });
+                $("#foot").load("foot.html", function () {
+                    refirsh();
+                    $("#dialog").css({
+                        width: $("body").innerWidth(),
+                        height: $("body").css("height")
+                    })
+
+                });
+            })();
+            // console.log(res); cs ww
             var l = res.length;
             var pages = Math.ceil(res.length / 20);
             $('#Pagination').pagination(pages, {
@@ -391,19 +407,24 @@
                                     lis += '<li><img src="' + res[i].imgs[j] + '"></li>';
                                 }
                             }
-                            divs += '<div class="list_box_li" data-id="' + res[i].id + '"><div class="list_box_con"><div class="gimg rel"><a href="#"><img src="' + res[i].imgs[0] + '"></a></div><div class="gimg-min"><ul>' + lis + '</ul></div><a class="gtitle" href="#">' + res[i].tip + '</a><p class="gprice"><span class="c999 through">￥' + res[i].price[0] + '</span><span class="cred ft16 price">￥' + res[i].price[1] + '</span><span class="c999">' + res[i].price[2] + '/斤</span></p><p class="c999 deal-cnt"><em>已售' + res[i].sale + '袋</em><em class="lis_icon">' + res[i].com + '人互动</em></p></div><div class="buy clearfix"><a href="#" class="fl dib buyl"><span>收藏</span></a><a href="#" class="fr dib buyr"><span>加入购物车</span></a></div></div>';
+                            divs += '<div class="list_box_li" data-id="' + res[i].id + '"><div class="list_box_con"><div class="gimg rel"><a href="#"><img src="' + res[i].imgs[0] + '"></a></div><div class="gimg-min"><ul>' + lis + '</ul></div><a class="gtitle" href="#">' + res[i].tip + '</a><p class="gprice"><span class="c999 through">￥' + res[i].price[0] + '</span><span class="cred ft16 price">￥' + res[i].price[1] + '</span><span class="c999">' + res[i].price[2] + '/斤</span></p><p class="c999 deal-cnt"><em>已售' + res[i].sale + '袋</em><em class="lis_icon">' + res[i].com + '人互动</em></p></div><div class="buy clearfix"><a href="#" class="fl dib buyl"><span>收藏</span></a><a href="javascript:;" class="fr dib buyr"><span>加入购物车</span></a></div></div>';
                         }
-                        //console.log(divs);
-                        listBox.html(divs);
-                        $(".list_box_li .gimg-min").on("mouseenter", "li", function () {
-                            $(this).addClass("hov").siblings().removeClass("hov");
-                            $(this).parents(".list_box_li").find(".gimg img").attr("src", $(this).find("img").attr("src"));
-                        });
                     }
+                    listBox.html(divs);
+                    $(".buyr").on("click", function () {
+                        var id = $(this).parents(".list_box_li").attr("data-id")
+                        cart(res, id, 1);
+                    });
+
+                    $(".list_box_li .gimg-min").on("mouseenter", "li", function () {
+                        $(this).addClass("hov").siblings().removeClass("hov");
+                        $(this).parents(".list_box_li").find(".gimg img").attr("src", $(this).find("img").attr("src"));
+                    });
                 }
             });
 
-        })
+        });
+        //点击添加到购物车设置cookie
     })
 </script>
 </html>

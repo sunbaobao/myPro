@@ -328,7 +328,7 @@ a.ahov, .filter_box td > a:hover {
 
 .list_box_li {
     width: 235px;
-    height: 410px;
+    height: 405px;
     display: inline;
     float: left;
     border: 1px solid #e6e6e6;
@@ -346,6 +346,11 @@ a.ahov, .filter_box td > a:hover {
     padding: 14px 14px 0 14px;
 }
 
+.list_box_con .gimg a img {
+    width: 200px;
+    height: 200px;
+    display: block;
+}
 .gimg {
     vertical-align: middle;
     display: block;
@@ -441,4 +446,52 @@ a.ahov, .filter_box td > a:hover {
     background: #7e32a9;
     text-indent: 0;
     color: #ffffff;
+}
+
+/*购物车弹出框样式*/
+#dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000000;
+    opacity: .4;
+    z-index: 9010;
+    display: none;
+}
+
+.dia-con {
+    width: 580px;
+    height: 180px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9011;
+    background-color: #FFFFFF;
+    opacity: 1;
+    padding: 35px 0 0 86px;
+    display: none;
+}
+
+.smbtn span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFF;
+    background-position: left -212px;
+    padding-left: 20px;
+    float: left;
+    display: block;
+}
+
+.smbtn {
+    height: 32px;
+    line-height: 32px;
+    background-position: right -212px;
+    padding-right: 20px;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.smbtn {
+    line-height: 32px;
 }

@@ -330,3 +330,87 @@ li.hov label {
     padding-right: 10px;
     display: block;
 }
+
+#cart {
+    left: 718px;
+    top: 132px;
+    z-index: 2000;
+    width: 510px;
+    box-shadow: 0 3px 0 2px #ddd;
+    display: none;
+}
+
+.con-box {
+    border: 1px solid #62a727;
+    padding: 15px;
+}
+
+.cartVlist {
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.cartVlist li {
+    line-height: 18px;
+    border-bottom: 1px dashed #ddd;
+    margin-bottom: 10px;
+}
+
+.cartVlist ul li > em a img {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #dddddd;
+}
+
+.cartVlist li p {
+    text-align: left;
+    width: 385px;
+}
+
+.cartbt_btn {
+    text-align: right;
+}
+
+.cartbt_btn a.btn, .cartbt_btn a.btn span, .cartbt_btn a.smbtn, .cartbt_btn .smbtn span, .smbtn span, .smbtn {
+    background-image: url("../images/newbtn.png");
+    background-repeat: no-repeat;
+}
+
+.cartbt_btn .btn, .cartbt_btn .smbtn {
+    line-height: 28px;
+    display: inline-block;
+    background-position: right 0;
+    padding-right: 10px;
+    height: 28px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.cartbt_btn > a {
+    margin-right: 5px;
+}
+
+.cartbt_btn .btn span, .cartbt_btn .smbtn span {
+    float: left;
+    background-position: 0 0;
+    padding-left: 10px;
+}
+
+.cartbt_btn .smbtn {
+    height: 32px;
+    line-height: 32px;
+    background-position: right -212px;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+    padding-right: 20px;
+}
+
+.cartbt_btn .smbtn span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFF;
+    background-position: left -212px;
+    padding-left: 20px;
+    float: left;
+}

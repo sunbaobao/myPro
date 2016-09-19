@@ -208,7 +208,7 @@ em.error{
     text-align: center;
     line-height: 52px;
     border-radius: 5px;
-    background: #ededed;
+    background: #33cb98;
     width: 413px;
     height: 52px;
     margin: 15px 0 50px 100px;
@@ -218,4 +218,15 @@ em.error{
 .Registerfooter {
     width: 820px;
     padding: 70px 0;
+}
+
+#resMes {
+    display: block;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: red;
+    font-size: 12px;
+    top: 30px;
+    left: -25px;
 }

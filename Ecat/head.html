@@ -35,7 +35,7 @@
                     <a href="#">推荐得惊喜</a>
                 </div>
             </li>
-            <li class="cart-t"><i></i><a href="#">购物车(<em id="cart_num">0</em>)</a></li>
+            <li class="cart-t"><i></i><a href="#">购物车(<em class="cart_num">0</em>)</a></li>
             <li><a href="register.html">[注册]</a></li>
             <li><a href="login.html" id="h-login">[登录]</a></li>
         </ul>
@@ -65,7 +65,7 @@
             <a href="#">任性，<span class="cred ft16">猫砂</span>全国99包邮啦！</a>
         </div>
         <div class="go-buy fr">
-            <a class="c666" href="#">购物车(<em>0</em>)</a>
+            <a class="c666" href="#">购物车(<em class="cart_num">0</em>)</a>
         </div>
     </div>
 </div>
@@ -186,13 +186,13 @@
                     var lis = "";      //创建a标签
                     for (var k = 0; k < res[i].title.head[j].list.length; k++) {
                         //console.log(res[i].title.head[j].list[k]); cs ww
-                        lis += '<a href="#">' + res[i].title.head[j].list[k] + '</a>';
+                        lis += '<a href="goodslist.html">' + res[i].title.head[j].list[k] + '</a>';
                     }
                     hes += '<div class="mid_head"><a href="#">' + res[i].title.head[j].headName + '</a><img src="' + res[i].title.head[j].img + '" alt=""></div><div class="mid_list">' + lis + '</div><div class="clear dotline"></div>';
                 }
                 // console.log(hes);  cs ww
 
-                tis += '<div class="mincate"><div class="ctitle"><img class="catepic" src="' + res[i].title.img + '"><a href="#">' + res[i].title.content + '</a><i></i><a href="#"><img src="' + res[i].title.gif + '" width="220" height="35"></a></div><div class="clear dotline"></div>' + hes + '</div>';
+                tis += '<div class="mincate"><div class="ctitle"><img class="catepic" src="' + res[i].title.img + '"><a href="#">' + res[i].title.content + '</a><i></i><a href="goodslist.html"><img src="' + res[i].title.gif + '" width="220" height="35"></a></div><div class="clear dotline"></div>' + hes + '</div>';
             }
             // console.log(tis);    cs ww
             cateLi.html(tis);

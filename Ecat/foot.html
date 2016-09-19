@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="css/foot.css" type="text/css" rel="stylesheet">
-    <!--<link href="css/rest.css" type="text/css" rel="stylesheet">-->
+    <link href="css/rest.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <!--友情链接-->
@@ -233,6 +233,35 @@
     </div>
     <div class="rtbot"></div>
 </div>
+<!--购物车-->
+<div class="fixd" id="cart">
+    <div class="con-box bgwh">
+        <div class="cartVlist">
+            <ul class="">
+                <li class="clearfix">
+                    <em class="fl mr">
+                        <a href="#"><img src="images/goods/gl2.jpg"></a>
+                    </em>
+                    <div class="fl">
+                        <p><a href="#">1234哈哈哈</a></p>
+                        <p><span class="cred">￥9.00 × 1</span></p>
+                        <div>
+                            <a class="fr" href="javascript:;">[删除]</a>
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+        <p>共 <span class="cred" id="cartgd_num">6</span> 件商品 合计：<span class="cred">￥739.00</span></p>
+        <div class="cartbt_btn">
+            <a class="btn" id="out"><span>取出</span></a>
+            <a class="btn" id="save"><span>寄存</span></a>
+            <a href="javascript:;" class="btn" id="clear"><span>清空</span></a>
+            <a class="smbtn"><span>去结算</span></a>
+        </div>
+    </div>
+</div>
 </body>
 <script>
     //返回顶部效果
@@ -259,17 +288,100 @@
                     opacity: 1
                 }, 500)
             }
-        })
+        });
         $(".rtcont").on("mouseleave", "li", function () {
             if ($(this).children().eq(0).is("label")) {
                 $(this).children("label").eq(0).stop(true).animate({
                     right: "53px",
                     opacity: 0
                 }, 500, function () {
-                    $(this).css("dispaly", "none");
+                    //console.log($(this).children().eq(0)) ;
+                    $(this).css("display", "none");
                 })
             }
         })
     });
+</script>
+<script>
+    //购物车样式
+    $(function () {
+        $(".scart").on({
+            mouseenter: function (e) {
+                $("#cart").css("display", "block");
+            },
+            mouseleave: function (e) {
+                if ($(e.relatedTarget).parents("#cart").length != 0 || $(e.relatedTarget) == $("#cart")) {
+                    return;
+                }
+                $("#cart").css("display", "none");
+            }
+        });
+        $("#cart").on("mouseleave", function () {
+            $(this).css("display", "none");
+        })
+    })
+</script>
+<script>
+    //全局函数刷新购物车
+    function refirsh() {
+        if ($.cookie("goods")) {
+            var goods = $.parseJSON($.cookie("goods"));
+            var l = goods.length;
+            var cont = 0;
+            $.get("goodslist.json", function (res) {
+                //console.log(res);csww
+                var lis = '';
+                for (var i in goods) {
+                    for (var j in res) {
+                        if (res[j].id == goods[i].id) {
+                            //console.log(res[j].id);
+                            cont += parseFloat(res[j].price[1]) * parseInt(goods[i].num);
+                            lis += '<li class="clearfix" data-id="' + res[j].id + '"><em class="fl mr"><a href="#"><img src="' + res[j].imgs[0] + '"></a></em><div class="fl"><p><a href="#">' + res[j].tip + '</a></p><p><span class="cred">￥' + res[j].price[1] + ' × ' + goods[i].num + '</span></p><div><a class="fr" href="javascript:;">[删除]</a></div></div></li>';
+                            break;
+                        }
+                    }
+                }
+                cont = Math.round(cont * 100) / 100;
+                $(".con-box").eq(0).html('<div class="cartVlist"><ul class="">' + lis + '</ul></div><p>共<span class="cred" id="cartgd_num">' + l + '</span>件商品合计<span class="cred">￥' + cont + '元</span></p><div class="cartbt_btn"><a class="btn"><span>取出</span></a><a class="btn"><span>寄存</span></a><a class="btn"><span>清空</span></a><a class="smbtn"><span>去结算</span></a>');
+                //console.log( $(".cart_num"));
+                //小的数字
+                for (var n = 0; n < $(".cart_num").length; n++) {
+                    $(".cart_num").eq(n).text(l);
+                }
+            })
+        }
+    }
+    refirsh()
+</script>
+<script>
+    $(function () {
+        $(".con-box").on("click", ".cartbt_btn>a", function () {
+            if ($(this).text() == "清空") {
+                $.cookie("goods", "[]");
+                refirsh();
+            } else if ($(this).text() == "寄存") {
+                $.cookie("goodsS", $.cookie("goods"), {expires: 7})
+                alert("寄存成功！");
+            } else {
+                $.cookie("goods", $.cookie("goodsS"));
+                refirsh();
+            }
+
+        });
+        $(".con-box").on("click", ".cartVlist>ul>li>div>div>a", function (e) {
+            //console.log($(this).text());csww
+            var id = $(this).parents("li").attr("data-id");
+            //console.log($(this).parents("li").attr("data-id"));
+            var goodsO = $.parseJSON($.cookie("goods"));
+            for (var i in goodsO) {
+                if (goodsO[i].id == id) {
+                    goodsO.splice(i, 1);
+                }
+            }
+            $.cookie("goods", JSON.stringify(goodsO));
+            refirsh();
+            // $(this).parents("li").remove();
+        })
+    })
 </script>
 </html>

@@ -109,6 +109,10 @@
     margin: 0 auto;
 }
 
+#wrap > a > img {
+    width: 300px;
+    height: 300px;
+}
 .oborder li {
     float: left;
     border: 1px solid #dddddd;
@@ -277,7 +281,7 @@
     top: 0;
     left: 0;
     width: 187px;
-    height: 187px;
+    height: 150px;
     background: #FFFFFF;
     opacity: .6;
     border: 1px solid #dddddd;
@@ -287,7 +291,7 @@
 .bigB {
     position: absolute;
     width: 500px;
-    height: 500px;
+    height: 400px;
     left: 382px;
     top: -60px;
     border: 1px solid #dddddd;
@@ -430,6 +434,8 @@
 
 .gimg img {
     vertical-align: middle;
+    width: 55px;
+    height: 55px;
 }
 
 .mglist li.gtitle {
@@ -516,4 +522,51 @@
 
 .rela {
     position: relative;
+}
+
+#dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000000;
+    opacity: .4;
+    z-index: 9010;
+    display: none;
+}
+
+.dia-con {
+    width: 580px;
+    height: 180px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9011;
+    background-color: #FFFFFF;
+    opacity: 1;
+    padding: 35px 0 0 86px;
+    display: none;
+}
+
+.smbtn span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFF;
+    background-position: left -212px;
+    padding-left: 20px;
+    float: left;
+    display: block;
+}
+
+.smbtn {
+    height: 32px;
+    line-height: 32px;
+    background-position: right -212px;
+    padding-right: 20px;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.smbtn {
+    line-height: 32px;
 }
