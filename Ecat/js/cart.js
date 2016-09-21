@@ -48,7 +48,7 @@ function cart(res, id, num) {
             }
         }
     }
-    refirsh();
+    refresh();
     $("#goodsl").text(goodsl);
     $("#goodscont").text(cont + "元");
     $("#dialog").css("display", "block");

@@ -149,7 +149,6 @@
                     <span class="fl mt">袋</span>
                 </div>
             </div>
-
             <!--多件优惠、赠品-->
             <!--发货信息-->
             <div class="norms clearfix mt15">
@@ -177,7 +176,7 @@
     <div class="w-mid fr overflow">
         <div class="multi-tabs rela">
             <a class="tab-gd-intro bgwh hov"><span class="ft14">商品详情</span></a>
-            <a class="rep pointer bgwh"><span class="ft14">评价(1153)</span></a>
+            <a class="rep pointer bgwh "><span class="ft14">评价(1153)</span></a>
             <a class="pointer bgwh"><span class="ft14">咨询(231)</span></a>
             <a class="pointer bgwh content-epet"><span class="ft14">不一样的E宠</span></a>
             <a class="genuine">
@@ -259,10 +258,10 @@
             <ul class="mglist">
                 <li class="gimg">
                     <a href="#">
-                        <img src="images/detail/dl1.jpg" style="display: inline;">
+                        <img src="images/goods/gl50.jpg" style="display: inline;">
                     </a>
                 </li>
-                <li class="gtitle mb"><a href="#">喜乐比SharlovY 毛球控制配方 三文鱼+鸡肉成猫粮1.4kg 1.4kg</a>
+                <li class="gtitle mb"><a href="#">伟嘉 海洋鱼味控制毛球成猫粮 1.4kg 成猫1岁及以上 控制毛球 从</a>
                     <br>
                     <span class="price">￥37.80</span>
                 </li>
@@ -271,58 +270,46 @@
             <ul class="mglist">
                 <li class="gimg">
                     <a href="#">
-                        <img src="images/detail/dl1.jpg" style="display: inline;">
+                        <img src="images/detail/d20.jpg" style="display: inline;">
                     </a>
                 </li>
-                <li class="gtitle mb"><a href="#">喜乐比SharlovY 毛球控制配方 三文鱼+鸡肉成猫粮1.4kg 1.4kg</a>
+                <li class="gtitle mb"><a href="#">喜乐比SharlovY 毛球控制配方 三文鱼+鸡肉成猫粮1.4kg 1.4kg伟嘉 海洋鱼味控制毛球成猫粮 1.4kg</a>
                     <br>
-                    <span class="price">￥37.80</span>
+                    <span class="price">￥35.80</span>
                 </li>
             </ul>
             <div class="clear"></div>
             <ul class="mglist">
                 <li class="gimg">
                     <a href="#">
-                        <img src="images/detail/dl1.jpg" style="display: inline;">
+                        <img src="images/goods/gl11.jpg" style="display: inline;">
                     </a>
                 </li>
-                <li class="gtitle mb"><a href="#">喜乐比SharlovY 毛球控制配方 三文鱼+鸡肉成猫粮1.4kg 1.4kg</a>
+                <li class="gtitle mb"><a href="#">皇家royal canin BK34 1-4月龄猫奶糕 4kg 12kg</a>
                     <br>
-                    <span class="price">￥37.80</span>
+                    <span class="price">￥31.80</span>
                 </li>
             </ul>
             <div class="clear"></div>
             <ul class="mglist">
                 <li class="gimg">
                     <a href="#">
-                        <img src="images/detail/dl1.jpg" style="display: inline;">
+                        <img src="images/goods/gl12.jpg" style="display: inline;">
                     </a>
                 </li>
-                <li class="gtitle mb"><a href="#">喜乐比SharlovY 毛球控制配方 三文鱼+鸡肉成猫粮1.4kg 1.4kg</a>
+                <li class="gtitle mb"><a href="#">纯皓Nutrifresh 鸡肉+鱼配方天然无谷幼猫粮 0.6kg 80%肉类含量</a>
                     <br>
-                    <span class="price">￥37.80</span>
+                    <span class="price">￥32.80</span>
                 </li>
             </ul>
             <div class="clear"></div>
             <ul class="mglist">
                 <li class="gimg">
                     <a href="#">
-                        <img src="images/detail/dl1.jpg" style="display: inline;">
+                        <img src="images/goods/gl13.jpg" style="display: inline;">
                     </a>
                 </li>
-                <li class="gtitle mb"><a href="#">喜乐比SharlovY 毛球控制配方 三文鱼+鸡肉成猫粮1.4kg 1.4kg</a>
-                    <br>
-                    <span class="price">￥37.80</span>
-                </li>
-            </ul>
-            <div class="clear"></div>
-            <ul class="mglist">
-                <li class="gimg">
-                    <a href="#">
-                        <img src="images/detail/dl1.jpg" style="display: inline;">
-                    </a>
-                </li>
-                <li class="gtitle mb"><a href="#">喜乐比SharlovY 毛球控制配方 三文鱼+鸡肉成猫粮1.4kg 1.4kg</a>
+                <li class="gtitle mb"><a href="#">顽皮Wanpy 强化免疫配方 幼猫奶糕粮 500g 功能猫粮系列 补充营养 强化免疫</a>
                     <br>
                     <span class="price">￥37.80</span>
                 </li>
@@ -420,7 +407,7 @@
             })
         });
         $("#foot").load("foot.html", function () {
-            refirsh();
+            refresh();
             $("#dialog").css({
                 width: $("body").innerWidth(),
                 height: $("body").css("height")
@@ -434,8 +421,8 @@
     $(function () {
         $(".mask").on("mouseenter", function (e) {
             var x, y;
-            $(".floatB").fadeIn(300);
-            $(".bigB").fadeIn(300);
+            $(".floatB").stop(true).fadeIn(300);
+            $(".bigB").stop(true).fadeIn(300);
             $(".mask").on("mousemove", function (e) {
                 x = e.offsetX - 94;
                 y = e.offsetY - 94;
@@ -465,7 +452,7 @@
             $(".floatB").fadeOut(300);
             $(".bigB").fadeOut(300);
             $(".mask").off("mousemove");
-        })
+        });
     });
 </script>
 <script>
@@ -475,6 +462,9 @@
             $(this).addClass("hov").siblings().removeClass("hov");
             $("#wrap>a>img").attr("src", $(this).find("img").attr("src"));
             $(".bigB>img").attr("src", $(this).find("img").attr("src"));
+        });
+        $(".multi-tabs").on("click", "a", function () {
+            $(this).addClass("hov").siblings().removeClass("hov");
         })
     })
 </script>
@@ -522,7 +512,7 @@
             var id = $.cookie("detail-id");
             $.get("goodslist.json", function (res) {
                 cart(res, id, buynum.val());
-            })
+            });
         });
         //添加到购物车
     });

@@ -36,7 +36,8 @@
                 </div>
             </li>
             <li class="cart-t"><i></i><a href="cart.html">购物车(<em class="cart_num">0</em>)</a></li>
-            <li><a href="register.html">[注册]</a></li>
+            <li id="register"><a href="register.html">[注册]</a></li>
+            <li id="register1" style="display: none;"><a href="javascript:;" onclick="quit();">退出</a></li>
             <li><a href="login.html" id="h-login">[登录]</a></li>
         </ul>
     </div>
@@ -45,7 +46,7 @@
 <div id="head1" class="bgwh">
     <div class="head1">
         <div class="logo">
-            <a href="#"></a>
+            <a href="index.html"></a>
         </div>
         <form action="" class="fl" id="sechform">
             <ul class="sch-list"></ul>
@@ -81,7 +82,7 @@
                 <!--左边详细列表-->
                 <div class="main-list-l">
                     <!--宠物分类-->
-                    <div class="list-type" style="display:block;">
+                    <div class="list-type" style="display:none;">
                         <dl>
                             <dd>
                                 <a href="#"><span></span></a>
@@ -96,7 +97,7 @@
                         </dl>
                     </div>
                     <!--商品分类-->
-                    <div class="detype rela" style="display: none;">
+                    <div class="detype rela" style="display: block;">
                         <ul class="clearfix">
                             <li class="">
                                 <h3><span class="menuIcoBg menu1"></span>
@@ -314,11 +315,35 @@
     })
 </script>
 <script>
-    $(function () {
+
+    function chicklogin() {
         if ($.cookie("username")) {
+            //console.log($.cookie("username"));
             $("#h-login").text($.cookie("username")).attr("href", "javascript:;");
+            $("#register1").css("display", "block");
+            $("#register").css("display", "none");
+            return true;
+        } else {
+            $("#h-login").text("[登录]").attr("href", "login.html");
+            $("#register1").css("display", "none");
+            $("#register").css("display", "block");
+            return false;
         }
-    })
+    }
+    chicklogin();
+    $("#register").click(function () {
+
+        if (quit()) {
+            $("#register").text("退出").attr("href", "javascript:;");
+        } else {
+            $("#register").text("[注册]");
+        }
+    });
+    function quit() {
+        $.cookie("username", null, {expires: -1});
+        return chicklogin();
+        }
+
 </script>
 <script>
     $(function () {

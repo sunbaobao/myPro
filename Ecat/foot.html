@@ -275,12 +275,12 @@
                 toTop.css("display", "none");
             }
         });
-        toTop.on({
-            click: function () {
-                // alert(1); cs ww;
-                $("body").animate({scrollTop: 0}, 800);
-            }
-        });
+        toTop.on("click", function () {
+                    // alert(1); cs ww;
+                    //console.log($("body"));
+                    $("html,body").finish().animate({scrollTop: "0"}, 800);
+                }
+        );
         $(".rtcont").on("mouseenter", "li", function () {
             if ($(this).children().eq(0).is("label")) {
                 $(this).children("label").eq(0).css("display", "block").stop(true).animate({
@@ -322,8 +322,8 @@
     })
 </script>
 <script>
-    //全局函数刷新购物车
-    function refirsh() {
+    //全局函数刷新左侧购物车
+    function refresh() {
         if ($.cookie("goods")) {
             var goods = $.parseJSON($.cookie("goods"));
             var l = goods.length;
@@ -336,7 +336,7 @@
                         if (res[j].id == goods[i].id) {
                             //console.log(res[j].id);
                             cont += parseFloat(res[j].price[1]) * parseInt(goods[i].num);
-                            lis += '<li class="clearfix" data-id="' + res[j].id + '"><em class="fl mr"><a href="#"><img src="' + res[j].imgs[0] + '"></a></em><div class="fl"><p><a href="#">' + res[j].tip + '</a></p><p><span class="cred">￥' + res[j].price[1] + ' × ' + goods[i].num + '</span></p><div><a class="fr" href="javascript:;">[删除]</a></div></div></li>';
+                            lis += '<li class="clearfix" data-id="' + res[j].id + '"><em class="fl mr"><a href="#" class="toDetail"><img src="' + res[j].imgs[0] + '"></a></em><div class="fl"><p><a href="#" class="toDetail">' + res[j].tip + '</a></p><p><span class="cred">￥' + res[j].price[1] + ' × ' + goods[i].num + '</span></p><div><a class="fr" href="javascript:;">[删除]</a></div></div></li>';
                             break;
                         }
                     }
@@ -349,28 +349,32 @@
                     $(".cart_num").eq(n).text(l);
                 }
             })
+        } else {
+            $.cookie("goods", "[]");
+            $.cookie("goodsS", "[]");
         }
         if (typeof cart_re === "function") {
             cart_re();
         }
     }
-    refirsh()
+    refresh();
 </script>
 <script>
+    //购物车的一些操作
     $(function () {
         $(".con-box").on("click", ".cartbt_btn>a", function () {
             if ($(this).text() == "清空") {
                 $.cookie("goods", "[]");
-                refirsh();
+                refresh();
             } else if ($(this).text() == "寄存") {
                 $.cookie("goodsS", $.cookie("goods"), {expires: 7})
                 alert("寄存成功！");
-            } else {
+            } else if ($(this).text() == "取出") {
                 $.cookie("goods", $.cookie("goodsS"));
-                refirsh();
+                refresh();
             }
-
         });
+        //删除操作
         $(".con-box").on("click", ".cartVlist>ul>li>div>div>a", function (e) {
             //console.log($(this).text());csww
             var id = $(this).parents("li").attr("data-id");
@@ -382,9 +386,16 @@
                 }
             }
             $.cookie("goods", JSON.stringify(goodsO));
-            refirsh();
+            refresh();
             // $(this).parents("li").remove();
-        })
+        });
+        //点击跳转到detail
+        $(".con-box").on("click", ".toDetail", function () {
+            console.log(1);
+            var id = $(this).parents("li").attr("data-id");
+            $.cookie("detail-id", id);
+            $(this).prop("href", "detail.html");
+        });
     })
 </script>
 </html>

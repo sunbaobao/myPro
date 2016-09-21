@@ -3,11 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="js/jquery-1.11.3.js"></script>
 </head>
 <body>
+<div id="bottom">
+    <!-- 隐藏部分 -->
+    <table>
+        <tbody>
+        <!-- <tr>
+            <td id="td1"><a href="#"><img src="imgx/xiao.jpg"/></a></td>
+            <td id="td2">
+                <p><a href="#">Za姬芮 恒润娇养洁面水乳3件套 洁面膏+化妆水+乳液保湿补水抗皱护肤品化妆水</a><span>颜色:标准型</span></p>
+            </td>
+            <td id="td3">￥358.00元</td>
+            <td id="td4">
+                <span>数量：</span>
+                <p id="puse"></p>
+                <input type="text" value="1" id="tex"/>
+                <p id="buse"></p>
+
+            </td>
+            <td id="td5">￥358.00元</td>
+            <td id="td6"><a href="#">删除</a></td>
+        </tr> -->
+        </tbody>
+    </table>
+    <div id="shop">
+        <p id="p1">专柜价 : <span>￥0.00元</span></p>
+        <p>为您节省 : <span>-￥97.00元</span></p>
+        <p id="p3">运费 : <span>满58包邮</span></p>
+        <h3>商品总金额 : <span>￥0.00元</span></h3>
+        <div id="bot">
+            <b><a href="#">&lt;&lt;继续购买</a></b>
+            <span>注册登录后购物可享受积分，现金折扣等更多服务!</span>
+            <i><a href="#">&lt;&lt;立即注册 or</a><a href="#">&lt;&lt;立即登陆</a></i>
+            <a href="#" class="a2">不登陆直接购买</a>
+        </div>
+    </div>
+</div>
 
 </body>
 <script>
-    console.log(0.2 + 0.1);
+    //console.log(0.2 + 0.1);
+    function selectAllCheckBox(parentid) {
+        var PID = document.getElementById(parentid);
+        var cb = PID.getElementsByTagName("input");
+        for (var i = 0; i < cb.length; i++) {
+            if (cb[i].type == "checkbox") {
+                cb[i].checked = "checked";
+            }
+        }
+    }
+</script>
+<script language="javascript">
+    /*document.getElementById("ca").onclick=function () {
+     var c1=document.getElementById("c1");
+     if(this.checked){
+     c1.checked=true;
+     }else {
+     c1.checked=false;
+     }
+     };
+     function   cli(Obj)
+     {
+     var collid = document.getElementById("all")
+     var coll = document.getElementsByName(Obj)
+     if (collid.checked){
+     for(var i = 0; i < coll.length; i++)
+     coll[i].checked = true;
+     }else{
+     for(var i = 0; i < coll.length; i++)
+     coll[i].checked = false;
+     }
+     }*/
+    // 动态获取购物车内容
+    $.ajax({
+        url: "Ecat/goodslist.json",
+        type: "get",
+        success: function (res) {
+            var html = "";
+            console.log(res);
+            /* for(var i=0;i<res.length;i++){
+             html+='<tr><td id="td1"><a href="#"><img src="'+res[i].url+'"/></a></td><td id="td2"><p><a href="#">'+res[i].name+'</a><span>颜色:标准型</span></p></td><td id="td3">'+res[i].price+'</td><td id="td4"><span>数量：</span><p id="puse"></p><input type="text" value="1" id="tex"/><p id="buse"></p></td><td id="td5">'+res[i].sum+'</td><td id="td6"><a href="#">删除</a></td></tr>'
+             console.log(html)
+             }*/
+            console.log($("#bottom").find("tbody ").html());
+
+
+        }
+
+    })
 </script>
 </html>
