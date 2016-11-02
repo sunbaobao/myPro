@@ -517,7 +517,6 @@
 <script>
     //轮播
     $(function () {
-
         var index = 0, page = 7;
         var imgLs = $(".imgL").children(); //img列表
         var timer;
@@ -525,7 +524,6 @@
         var spn = $(".main-title").eq(0).children().eq(1);//分类标签
         var dot = $(".dot");    //小点点
         var colorA = ["rgb(0, 23, 76)", "rgb(189, 163, 130)", "rgb(229, 236, 244)", "rgb(255, 226, 64)", " rgb(130, 174, 192)", " rgb(247, 246, 244)", "rgb(7, 119, 165)"];
-
         function go() {
             if (index == (imgLs.length - 1)) {
                 index = 0;
@@ -543,7 +541,6 @@
                 $(this).removeClass("hov");
             });
         }
-
         go();
         timer = setInterval(go, 5000);
         //鼠标划入大的盒子停止计时器
@@ -659,7 +656,7 @@
             //console.log($(this).index());  csww
             //console.log(index); csww
             go();
-        })
+        });
     });
 </script>
 <script>

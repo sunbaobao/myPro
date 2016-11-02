@@ -2,7 +2,7 @@
  * Created by Administrator on 2016/9/2.
  */
 /**
- *move三个参宿属性，目的值，持续时间
+ *move三个参数属性，目的值，持续时间
  */
 HTMLElement.prototype.myTimer;
 HTMLElement.prototype.myF = false;
@@ -17,7 +17,6 @@ HTMLElement.prototype.myMove = function (pro, value, duration) {
                 return ele.currentStyle[pro];
             }
         }
-
         var thisTa = ele;
         //console.log(thisTa);
         if (!thisTa.myF) {

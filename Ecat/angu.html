@@ -9,27 +9,44 @@
     <script src="../js/angular.min.js"></script>
 </head>
 <body>
+<div></div>
 <div class="list_box clearfix" ng-app="my" ng-controller="myCtrl" ng-model="goodsS">
-    <div class="list_box_li" ng-repeat="goods in goodsS  | orderBy:'price'" data-id="{{ goods.id }}">
+    <div ng-bind="someModel.someValue"></div>
+    <input type="button" ng-click="parentAction()" value="parent"/>
+
+    <div ng-controller="myCtrlChild">
+        <div ng-bind="someModel.someValue"></div>
+        <input type="button" ng-click="childAction()" value="child">
+    </div>
+    <div class="ml25 pad30">
+        <div my-directive my-url="https://www.baidu.com" my-link-text="百度"></div>
+        <select ng-model="order" class="w-min ftc">
+            <option value="id" selected>id</option>
+            <option value="price[1]">价格</option>
+            <option value="sale">销量</option>
+        </select>
+    </div>
+    <div class="list_box_li" ng-repeat="goods in goodsS  | orderBy:order" data-id="{{ goods.id }}">
         <div class="list_box_con">
             <div class="gimg rel">
                 <a href="#">
-                    <img src="{{ goods.imgs[0] }}">
+                    <img ng-src="{{ goods.imgs[0] }}">
                 </a>
             </div>
             <div class="gimg-min">
                 <ul>
-                    <li class="" ng-repeat="img in goods.imgs"><img src="{{ img }}"></li>
+                    <li ng-class="{{  }}" ng-repeat="img in goods.imgs"><img ng-src="{{ img }}"></li>
                     <!--<li><img src="images/goods/gl11.jpg"></li>-->
                 </ul>
             </div>
-            <a class="gtitle" href="#">{{ goods.tip }} </a>
+            <a class="gtitle" href="#" ng-bind="goods.tip"> </a>
             <p class="gprice">
-                <span class="c999 through">￥{{ goods.price[0] }}</span>
-                <span class="cred ft16 price">￥{{ goods.price[1] }}</span>
-                <span class="c999">{{ goods.price[2] }}/斤</span>
+                <span class="c999 through">￥<i ng-cloak>{{ goods.price[0]|toFloat |number:2}}</i></span>
+                <span class="cred ft16 price">￥{{ goods.price[1] | toFloat |number:2}}</span>
+                <span class="c999">{{ goods.price[2] |toFloat |number:2 }}/斤</span>
             </p>
-            <p class="c999 deal-cnt"><em>已售{{ goods.sale }}袋</em><em class="lis_icon">{{ goods.com }}人互动</em></p>
+            <p class="c999 deal-cnt"><em>已售{{ goods.sale|toFloat }}袋</em><em class="lis_icon">{{ goods.com }}人互动</em>
+            </p>
         </div>
         <div class="buy clearfix">
             <a href="#" class="fl dib buyl">
@@ -43,12 +60,29 @@
 </div>
 </body>
 <script>
+    //app.js
     var app = angular.module("my", []);
     app.controller("myCtrl", function ($scope, $http) {
         // console.log(res);
+        $scope.someModel = {
+            someValue: "soemvalue"
+        };
+        $scope.parentAction = function () {
+            $scope.someModel.someValue = "from parent"
+        };
+        $http({
+            method: 'GET',
+            url: 'goodslist.json'
+        }).success(function (data, status, headers, config) {
+// 当相应准备就绪时调用
+            $scope.goodsS = data;
+        }).error(function (data, status, headers, config) {
+// 当响应以错误状态返回时调用
+            alert("error");
+        });
         var result = [];
         //for
-        $scope.goodsS = [{
+        /* $scope.goodsS = [{
             "id": "001",
             "imgs": [
                 "images/goods/gl11.jpg",
@@ -58,10 +92,10 @@
             "tip": "比瑞吉 基础呵护系列 室内成猫粮 12kg ",
             "price": [
                 "654.00",
-                "41.00",
+         "041.00",
                 "22.71"
             ],
-            "sale": "636",
+         "sale": "0636",
             "com": "193"
         },
             {
@@ -73,11 +107,11 @@
                 ],
                 "tip": "伟嘉 海洋鱼味控制毛球成猫粮 1.4kg 成猫1岁及以上 控制毛球 从",
                 "price": [
-                    "62.00",
-                    "35.00",
-                    "2.71"
+         "062.00",
+         "035.00",
+         "02.71"
                 ],
-                "sale": "36",
+         "sale": "0036",
                 "com": "93"
             },
             {
@@ -88,11 +122,11 @@
                 ],
                 "tip": "皇家royal canin BK34 1-4月龄猫奶糕 4kg 12kg ",
                 "price": [
-                    "64.00",
-                    "45.00",
+         "064.00",
+         "045.00",
                     "22.71"
                 ],
-                "sale": "36",
+         "sale": "0036",
                 "com": "193"
             },
             {
@@ -103,10 +137,10 @@
                 "tip": "纯皓Nutrifresh 鸡肉+鱼配方天然无谷幼猫粮 0.6kg 80%肉类含量  ",
                 "price": [
                     "654.00",
-                    "59.10",
-                    "22.71"
+         "059.10",
+         "022.71"
                 ],
-                "sale": "636",
+         "sale": "0636",
                 "com": "193"
             },
             {
@@ -118,11 +152,11 @@
                 ],
                 "tip": "顽皮Wanpy 强化免疫配方 幼猫奶糕粮 500g 功能猫粮系列 补充营养 强化免疫 ",
                 "price": [
-                    "65.00",
-                    "42.01",
+         "065.00",
+         "042.01",
                     "22.71"
                 ],
-                "sale": "63",
+         "sale": "0061",
                 "com": "193"
             },
             {
@@ -133,11 +167,11 @@
                 ],
                 "tip": "好之味 美味配方 海鲜味全猫粮 500g 国产10大品牌 诺瑞旗下品牌  ",
                 "price": [
-                    "64.00",
-                    "54.00",
+         "064.00",
+         "054.00",
                     "22.71"
                 ],
-                "sale": "636",
+         "sale": "0632",
                 "com": "193"
             },
             {
@@ -150,10 +184,10 @@
                 "tip": "诺瑞 食补猫粮系列 牛油果美毛全期猫粮 1.4kg ",
                 "price": [
                     "654.00",
-                    "5.10",
-                    "5.71"
+         "005.10",
+         "05.71"
                 ],
-                "sale": "1636",
+         "sale": "1631",
                 "com": "1193"
             },
             {
@@ -163,11 +197,11 @@
                 ],
                 "tip": "比瑞吉 特别护理系列 深海鱼油美毛成猫粮 2kg ",
                 "price": [
-                    "65.00",
-                    "25.00",
-                    "2.71"
+         "065.00",
+         "025.00",
+         "02.71"
                 ],
-                "sale": "36",
+         "sale": "0033",
                 "com": "193"
             },
             {
@@ -178,11 +212,11 @@
                 ],
                 "tip": "妙多乐 全营养高能量成猫粮 拆零500g 超高性价比猫粮 轻松养宠第一步",
                 "price": [
-                    "54.00",
-                    "5.10",
+         "054.00",
+         "005.10",
                     "22.71"
                 ],
-                "sale": "636",
+         "sale": "1634",
                 "com": "193"
             },
             {
@@ -193,8 +227,8 @@
                 ],
                 "tip": "皇家royal canin K36幼猫/怀孕哺乳母猫粮10kg ",
                 "price": [
-                    "64.00",
-                    "45.00",
+         "064.00",
+         "045.00",
                     "22.71"
                 ],
                 "sale": "4636",
@@ -211,7 +245,7 @@
                     "245.00",
                     "22.71"
                 ],
-                "sale": "636",
+         "sale": "0635",
                 "com": "193"
             },
             {
@@ -221,11 +255,11 @@
                 ],
                 "tip": "艾尔KIER 室内解馋 全价成猫粮 0.5KG 鲜肉鲜鱼 易消化 增强免疫力 ",
                 "price": [
-                    "64.00",
-                    "45.00",
-                    "122.71"
+         "064.00",
+         "045.00",
+         "12.71"
                 ],
-                "sale": "66",
+         "sale": "0066",
                 "com": "13"
             },
             {
@@ -236,9 +270,9 @@
                 ],
                 "tip": "麦富迪 幼猫专用 奶糕粮 500g 不含人工色素和添加剂 增加高蛋白  ",
                 "price": [
-                    "64.00",
-                    "55.00",
-                    "2.00"
+         "064.00",
+         "055.00",
+         "02.00"
                 ],
                 "sale": "6361",
                 "com": "193"
@@ -250,29 +284,38 @@
                 ],
                 "tip": "麦富迪 幼猫专用 奶糕粮 500g 不含人工色素和添加剂 增加高蛋白  ",
                 "price": [
-                    "64.00",
-                    "55.00",
-                    "2.00"
+         "064.00",
+         "055.00",
+         "02.00"
                 ],
                 "sale": "6361",
                 "com": "193"
-            }];
-//        $scope.goods = {
-//            "id": "004",
-//            "imgs": [
-//                "images/goods/gl50.jpg",
-//                "images/goods/gl51.jpg",
-//                "images/goods/gl40.jpg"
-//            ],
-//            "tip": "纯皓Nutrifresh 鸡肉+鱼配方天然无谷幼猫粮 0.6kg 80%肉类含量  ",
-//            "price": [
-//                "654.00",
-//                "59.10",
-//                "22.71"
-//            ],
-//            "sale": "636",
-//            "com": "193"
-//        };
+         }];*/
+
+    }).controller("myCtrlChild", function ($scope) {
+        $scope.childAction = function () {
+            $scope.someModel.someValue = "from child";
+        }
     });
+    app.filter("toFloat", function () {
+        return function (input) {
+            if (input) {
+                return parseFloat(input);
+            }
+        }
+    });
+
+    app.directive('myDirective', function () {
+        return {
+            restrict: 'A',
+            replace: true,
+            scope: {
+                myUrl: '@', //绑定策略
+                myLinkText: '@' //绑定策略
+            },
+            template: '<a href="{{myUrl}}">' +
+            '{{myLinkText}}</a>'
+        };
+    })
 </script>
 </html>

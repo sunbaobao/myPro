@@ -419,7 +419,7 @@
 <script>
     //放大镜
     $(function () {
-        $(".mask").on("mouseenter", function (e) {
+        $(".mask").on("mouseover", function (e) {
             var x, y;
             $(".floatB").stop(true).fadeIn(300);
             $(".bigB").stop(true).fadeIn(300);
@@ -509,6 +509,10 @@
             }
         });
         $("#add-cart").click(function () {
+            if (!chicklogin()) {
+                alert("请先登录陆");
+                return;
+            }
             var id = $.cookie("detail-id");
             $.get("goodslist.json", function (res) {
                 cart(res, id, buynum.val());

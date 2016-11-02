@@ -407,12 +407,16 @@
                                     lis += '<li><img src="' + res[i].imgs[j] + '"></li>';
                                 }
                             }
-                            divs += '<div class="list_box_li" data-id="' + res[i].id + '"><div class="list_box_con"><div class="gimg rel"><a href="#"><img src="' + res[i].imgs[0] + '"></a></div><div class="gimg-min"><ul>' + lis + '</ul></div><a class="gtitle" href="#">' + res[i].tip + '</a><p class="gprice"><span class="c999 through">￥' + res[i].price[0] + '</span><span class="cred ft16 price">￥' + res[i].price[1] + '</span><span class="c999">' + res[i].price[2] + '/斤</span></p><p class="c999 deal-cnt"><em>已售' + res[i].sale + '袋</em><em class="lis_icon">' + res[i].com + '人互动</em></p></div><div class="buy clearfix"><a href="#" class="fl dib buyl"><span>收藏</span></a><a href="javascript:;" class="fr dib buyr"><span>加入购物车</span></a></div></div>';
+                            divs += '<div class="list_box_li" data-id="' + res[i].id + '"><div class="list_box_con"><div class="gimg rel"><a href="#"><img src="' + res[i].imgs[0] + '"></a></div><div class="gimg-min"><ul>' + lis + '</ul></div><a class="gtitle" href="#">' + res[i].tip + '</a><p class="gprice"><span class="c999 through">￥' + parseFloat(res[i].price[0]) + '</span><span class="cred ft16 price">￥' + parseFloat(res[i].price[1]) + '</span><span class="c999">' + parseFloat(res[i].price[2]) + '/斤</span></p><p class="c999 deal-cnt"><em>已售' + res[i].sale + '袋</em><em class="lis_icon">' + res[i].com + '人互动</em></p></div><div class="buy clearfix"><a href="#" class="fl dib buyl"><span>收藏</span></a><a href="javascript:;" class="fr dib buyr"><span>加入购物车</span></a></div></div>';
                         }
                     }
                     listBox.html(divs);
                     $(".buyr").on("click", function () {
-                        var id = $(this).parents(".list_box_li").attr("data-id")
+                        if (!chicklogin()) {
+                            alert("请先登录陆");
+                            return;
+                        }
+                        var id = $(this).parents(".list_box_li").attr("data-id");
                         cart(res, id, 1);
                     });
 
